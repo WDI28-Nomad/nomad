@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+#pic Uploader
+gem 'carrierwave'
+
 gem 'protected_attributes'
 
 # Use ActiveModel has_secure_password

@@ -25,6 +25,11 @@
     <%= user.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= user.label :email %><br />
+    <%= user.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= user.submit "Update" %>
   </div>
