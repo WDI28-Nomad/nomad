@@ -1,34 +1,31 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(@user) do |user| %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
+    <%= user.label :first_name %><br />
+    <%= user.text_field :first_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+    <%= user.label :last_name %><br />
+    <%= user.text_field :last_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :current_city %><br />
-    <%= f.text_field :current_city, autofocus: true %>
+    <%= user.label :username %><br />
+    <%= user.text_field :username, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= user.label :current_city %><br />
+    <%= user.text_field :current_city, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= user.label :email %><br />
+    <%= user.email_field :email, autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= user.submit "Update" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

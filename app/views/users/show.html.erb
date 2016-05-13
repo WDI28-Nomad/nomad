@@ -1,8 +1,12 @@
 <h1>Users#show</h1>
 
 
+<p> <%= @user.first_name %> </p>
+<p> <%= @user.last_name %> </p>
 <p> <%= @user.username %> </p>
 <p> <%= @user.current_city %> </p>
+<p> <%= @user.email %> </p>
+
 <p> <%= @user.created_at.strftime("Date joined: %m/%d/%Y") %> </p>
 
 <%= button_to "Edit", edit_user_path(@user), method: :get %>
