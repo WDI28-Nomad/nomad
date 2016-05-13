@@ -1,1 +1,0 @@
-# nomad is live!
