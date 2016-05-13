@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   # validates :username,
   #           presence: true,
   #           uniqueness: true
-  # validates :first_name, :last_name, 
+  # validates :first_name, :last_name,
   #           presence: true,
   #           length: { maximum: 255 }
 
+
+  mount_uploader :avatar, PictureUploader
 end
