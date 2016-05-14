@@ -39,6 +39,13 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div class="col-sm-12">
+  <div class="col-sm-6 col-sm-offset-3">
+    <% flash.each do |name, msg| %>
+      <p> <%= msg %></p>
+    <% end %>
+  </div>
+</div>
 
 
 

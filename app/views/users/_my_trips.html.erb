@@ -1,11 +1,16 @@
-<h3 class="my-trips-header">My Trips
-    <%= link_to "", new_user_trip_path(@user), class: "glyphicon glyphicon-plus" %></h3>
-<div class="my-trips-container">
-  <div class="my-trips">
-    <% @trips.each do |t| %>
-      <div class="my-trips-trip">
-        <%= link_to "#{t.name}", user_trip_path(@user, t), class: "my-trips-trip"%>
-      </div>
-    <% end %>
+<div class="sidebar-container">
+  <div class="my-trips-header">
+    <%= link_to "", new_user_trip_path(@user), class: "glyphicon glyphicon-plus pull-right" %>
+    <h3>My Trips</h3>
+  </div>
+
+  <div class="my-trips-container">
+    <div class="my-trips">
+      <% @trips.each do |t| %>
+        <div class="my-trips-trip">
+          <%= link_to "#{t.name}", user_trip_path(@user, t), class: "my-trips-trip"%>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
