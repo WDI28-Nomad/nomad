@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'trips/new'
+
+  get 'trips/show'
+
+  get 'trips/edit'
+
   devise_for :users
   root to: 'welcome#index'
   get 'welcome/index'
 
-  resources :users
+  resources :users do
+    resources :trips
+  end
 
   # devise_scope :user do
   #   get 'sign_in', to: 'devise/sessions#new'

@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @trip = Trip.new
+    @trips = Trip.all
   end
 
   def new
