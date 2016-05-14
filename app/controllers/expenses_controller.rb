@@ -29,6 +29,27 @@ class ExpensesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @trips = @user.trips
+    @expense = Expense.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
+  end
+
+  def update
+    @user = current_user
+    @trips = @user.trips
+    @expense = Expense.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
+    if @expense.update(expense_params)
+      flash[:notice] = "Expense succesfully updated!"
+      redirect_to user_trip_path(@user, @trip)
+    else
+      flash[:error] = @expense.errors.full_messages.join(", ")
+      redirect_to user_trip_path(@user, @trip)
+    end
+  end
+
+  def destroy
   end
 
   private

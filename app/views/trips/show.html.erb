@@ -16,20 +16,24 @@
   <h4>Destination: <%= @trip.destination %></h4>
 
   <% if current_user %>
-    <%= link_to "", edit_user_trip_path(@user, @trip), class: "glyphicon glyphicon-edit" %>
+    <%= link_to "", edit_user_trip_path(@user, @trip), class: "glyphicon glyphicon-pencil" %>
     <%= link_to "", user_trip_path(@user, @trip), method: :delete, data: {confirm: "Delete Post?"}, class: "glyphicon glyphicon-trash" %>
   <% end %>
   <br>
   <hr>
 
   <%= link_to "", new_user_trip_expense_path(@user, @trip), class: "glyphicon glyphicon-plus" %>
+
   <%= render 'expenses/form' %>
-  <h5>Expenses: </h5>
-  <ul>
-    <% @expenses.each do |e| %>
-      <li> <%= e.name %>  </li>
-    <% end %>
-  </ul>
-  <br>
+  <div class="col-sm-6 col-sm-offset-2">
+    <h5>Expenses: </h5>
+    <ul>
+      <% @expenses.each do |e| %>
+        <li> <%= e.name %> <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil" %> </li>
+      <% end %>
+    </ul>
+    <br>
+  </div>
+
   <%= link_to "Back to My Trips", user_path(@user), class: "btn btn-primary" %>
 </div>
