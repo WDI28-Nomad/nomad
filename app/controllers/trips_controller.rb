@@ -3,11 +3,13 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @user = User.find_by_id(@trip.user_id)
+    @trips = @user.trips
   end
 
   def new
     @user = current_user
     @trip = Trip.new
+    @trips = @user.trips
   end
 
   def create
@@ -25,6 +27,7 @@ class TripsController < ApplicationController
 
   def edit
     @user = current_user
+    @trips = @user.trips
     @trip = @user.trips.find(params[:id])
     @user = User.find_by_id(@trip.user_id)
     if @user != current_user

@@ -1,25 +1,13 @@
 <div class="col-sm-2">
   <%= render "sidebar" %>
+  <br>
+  <%= render "my_trips" %>
 </div>
 <div class="col-sm-10">
-  <h1 class="page-title">Start Planning</h1>
+  <h1 class="page-title">My Trips</h1>
+
+  <div class="map"><h1>Map Goes Here</h1></div>
 
   <%= render "add_trip" %>
 
-  <% @trips.each do |t| %>
-    <div class="col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="user-show-post-header-row">
-              <h3 class="user-show-post-title"><%= link_to "#{t.name}", user_trip_path(@user, t) %></h3>
-              <h4 class="user-show-trip-type"><%= t.trip_type %></h4>
-              <% if current_user %>
-                <%= link_to "", user_trip_path(@user, t), method: :delete, data: {confirm: "Delete Post?"}, class: "glyphicon glyphicon-trash pull-right" %>
-                <%= link_to "", edit_user_trip_path(@user, t), class: "glyphicon glyphicon-edit pull-right" %>
-              <% end %> 
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
 </div>

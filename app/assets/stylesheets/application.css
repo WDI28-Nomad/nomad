@@ -25,3 +25,14 @@
 .form-control {
   margin-bottom: 10px;
 }
+.map {
+  margin: 150px;
+  text-align: center;
+}
+.my-trips-header {
+  text-align: center;
+}
+.my-trips-trip {
+  font-size: 18px;
+  font-weight: 1.2em
+}

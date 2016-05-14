@@ -1,0 +1,5 @@
+<h4 class="my-trips-header">My Trips</h4>
+<% @trips.each do |t| %>
+  <div class="user-show-post-title"><%= link_to "#{t.name}", user_trip_path(@user, t), class: "my-trips-trip" %><%= link_to "", edit_user_trip_path(@user, t), class: "glyphicon glyphicon-edit pull-right" %></div>
+
+<% end %>
