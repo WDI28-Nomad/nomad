@@ -23,6 +23,7 @@
   <hr>
 
   <%= link_to "", new_user_trip_expense_path(@user, @trip), class: "glyphicon glyphicon-plus" %>
+  <%= render 'expenses/form' %>
   <h5>Expenses: </h5>
   <ul>
     <% @expenses.each do |e| %>
