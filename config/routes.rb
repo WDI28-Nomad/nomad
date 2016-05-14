@@ -1,25 +1,19 @@
 Rails.application.routes.draw do
 
-  get 'expenses/index'
-
-  get 'expenses/new'
-
-  get 'expenses/show'
-
-  get 'expenses/edit'
-
   devise_for :users
   root to: 'welcome#index'
   get 'welcome/index'
 
   resources :users do
-    resources :trips
+    resources :trips do
+      resources :expenses
+    end
   end
 
   # devise_scope :user do
   #   get 'sign_in', to: 'devise/sessions#new'
   #   get 'logout', to: 'devise/sessions#destroy'
-  # end 
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
