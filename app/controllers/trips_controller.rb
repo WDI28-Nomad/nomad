@@ -6,6 +6,8 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @user = User.find_by_id(@trip.user_id)
     @trips = @user.trips
+    @expense = Expense.new
+    @expenses = @trip.expenses
   end
 
   def new

@@ -48,3 +48,8 @@
   font-size: 18px;
   font-weight: 1.2em
 }
+
+.sidebar-container {
+  padding: 10px; 
+  background-color: #f4f4f4;
+}
