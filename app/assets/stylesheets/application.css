@@ -21,3 +21,9 @@
 .user-show-header {
   text-align: center;
 }
+.budget-bar {
+  width:100%;
+  font-size: 36px;
+  height: 100px;
+  background-color: green;
+}
