@@ -1,0 +1,30 @@
+<div class="col-xs-6 col-xs-offset-2">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add A Trip</h3>
+    </div>
+    <div class="panel-body">
+      <%= form_for [@user, @trip] do |t| %>
+        <div class="form-field">
+          <%= t.text_field :name, required: true, placeholder: "Name", class:"form-control" %>
+        </div>
+        <div class="form-field">
+          <%= t.text_field :trip_type, required: true, placeholder: "Trip Type", class:"form-control" %>
+        </div>
+        <div class="form-field">
+          <%= t.text_field :budget, required: true, placeholder: "Budget", class:"form-control" %>
+        </div>
+        <div class="form-field">
+          <%= t.text_field :origin, required: true, placeholder: "Origin", class:"form-control" %>
+        </div>
+        <div class="form-field">
+          <%= t.text_field :destination, required: true, placeholder: "Destination", class:"form-control" %>
+        </div>
+        <div class="form-field trip-post-button">
+        <%= t.submit "Submit", class: "btn btn-block btn-success trip-post-button"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

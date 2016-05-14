@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :first_name, :last_name, :current_city, :password])
    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :last_name, :email, :username, :avatar, :current_city, :password, :current_password) }
   end
+
+  def after_sign_in_path_for(resource)
+    current_user
+  end
 end

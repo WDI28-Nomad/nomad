@@ -1,12 +1,13 @@
-<h1>Users#show</h1>
+<div class="col-sm-3">
+  <%= render "sidebar" %>
+  <br>
+  <%= render "my_trips" %>
+</div>
+<div class="col-sm-9">
+  <h1 class="page-title">My Trips</h1>
 
-<p> <%= image_tag(@user.avatar_url, :length => 200, :width => 200) if @user.avatar.present? %> </p>
-<p> <%= @user.first_name %> </p>
-<p> <%= @user.last_name %> </p>
-<p> <%= @user.username %> </p>
-<p> <%= @user.current_city %> </p>
-<p> <%= @user.email %> </p>
+  <div class="map"><h1>Map Goes Here</h1></div>
 
-<p> <%= @user.created_at.strftime("Date joined: %m/%d/%Y") %> </p>
+  <%= render "add_trip" %>
 
-<%= button_to "Edit", edit_user_path(@user), method: :get %>
+</div>
