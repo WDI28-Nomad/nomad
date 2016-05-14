@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'expenses/index'
+
+  get 'expenses/new'
+
+  get 'expenses/show'
+
+  get 'expenses/edit'
+
   devise_for :users
   root to: 'welcome#index'
   get 'welcome/index'
