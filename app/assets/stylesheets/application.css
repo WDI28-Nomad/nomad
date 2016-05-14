@@ -31,7 +31,19 @@
 }
 .my-trips-header {
   text-align: center;
+  margin-bottom: 20px;
 }
+.my-trips-container {
+  height: 300px;
+}
+.my-trips {
+  overflow:auto;
+  height: 250px;
+}
+.my-trips-trip {
+  margin-bottom: 10px;
+}
+
 .my-trips-trip {
   font-size: 18px;
   font-weight: 1.2em
