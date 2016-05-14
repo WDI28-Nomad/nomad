@@ -5,10 +5,12 @@
   <h1 class="page-title"><%= @trip.name %></h1>
 
   <!-- Placeholder for budget bar -->
-  <div class="budget=bar">Budget Bar</div>
+  <div class="panel-footer"><h1>budget-bar</h1></div>
 
   <h4>Type: <%= @trip.trip_type %></h4>
   <h4>Budget: <%= @trip.budget %></h4>
+  <h4>Origin: <%= @trip.origin %></h4>
+  <h4>Destination: <%= @trip.destination %></h4>
 
   <% if current_user %>
     <%= link_to "", edit_user_trip_path(@user, @trip), class: "glyphicon glyphicon-edit" %>
