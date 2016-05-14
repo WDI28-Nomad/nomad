@@ -15,15 +15,10 @@
  *= require_self
  */
 
-.new-trip-header {
+.page-title {
   text-align: center;
 }
-.user-show-header {
-  text-align: center;
-}
-.budget-bar {
-  width:100%;
-  font-size: 36px;
-  height: 100px;
-  background-color: green;
+.glyphicon {
+  font-size: 1.5em;
+  padding-right: 10px;
 }
