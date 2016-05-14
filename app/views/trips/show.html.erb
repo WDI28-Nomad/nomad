@@ -17,7 +17,7 @@
 
   <% if current_user %>
     <%= link_to "", edit_user_trip_path(@user, @trip), class: "glyphicon glyphicon-pencil" %>
-    <%= link_to "", user_trip_path(@user, @trip), method: :delete, data: {confirm: "Delete Post?"}, class: "glyphicon glyphicon-trash" %>
+    <%= link_to "", user_trip_path(@user, @trip), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"}, class: "glyphicon glyphicon-trash" %>
   <% end %>
   <br>
   <hr>
