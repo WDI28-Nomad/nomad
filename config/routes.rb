@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :users do
-    resources :trips
+    resources :trips do
+      resources :expenses
+    end
   end
 
   # devise_scope :user do
   #   get 'sign_in', to: 'devise/sessions#new'
   #   get 'logout', to: 'devise/sessions#destroy'
-  # end 
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
