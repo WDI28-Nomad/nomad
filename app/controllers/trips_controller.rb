@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
 
+  #TODO: Helper Method for setting trips
+
   def show
     @trip = Trip.find(params[:id])
     @user = User.find_by_id(@trip.user_id)
@@ -29,7 +31,7 @@ class TripsController < ApplicationController
     @user = current_user
     @trips = @user.trips
     @trip = @user.trips.find(params[:id])
-    @user = User.find_by_id(@trip.user_id)
+
     if @user != current_user
       redirect_to root_path
     end
