@@ -1,19 +1,11 @@
-<h1>Users#show</h1>
-
-<p> <%= image_tag(@user.avatar_url, :length => 200, :width => 200) if @user.avatar.present? %> </p>
-<p> <%= @user.first_name %> </p>
-<p> <%= @user.last_name %> </p>
-<p> <%= @user.username %> </p>
-<p> <%= @user.current_city %> </p>
-<p> <%= @user.email %> </p>
-
-<p> <%= @user.created_at.strftime("Date joined: %m/%d/%Y") %> </p>
-
-<%= button_to "Edit", edit_user_path(@user), method: :get %>
-
+<div class="col-sm-2">
+  <%= render "sidebar" %>
+</div>
+<div class="col-sm-10">
+  <h1 class="user-show-header">Start Planning</h1>
 
   <%= render "/trips/form" %>
-
+  
   <% @trips.each do |t| %>
     <div class="col-xs-12">
       <div class="panel panel-default">
@@ -32,4 +24,5 @@
         <% end %>
       </div>
     </div>
-<% end %>
+  <% end %>
+</div>

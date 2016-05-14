@@ -4,15 +4,15 @@
       <h3 class="panel-title">Add A Trip</h3>
     </div>
     <div class="panel-body">
-      <%= form_for [@user, @trip] do |f| %>
+      <%= form_for [@user, @trip] do |t| %>
         <div class="form-field">
-          <%= f.text_field :name, required: true, placeholder: "Name", class:"form-control" %>
+          <%= t.text_field :name, required: true, placeholder: "Name", class:"form-control" %>
         </div>
         <div class="form-field">
-          <%= f.text_field :trip_type, required: true, placeholder: "Trip Type", class:"form-control" %>
+          <%= t.text_field :trip_type, required: true, placeholder: "Trip Type", class:"form-control" %>
         </div>
-        <div class="form-field city-show-post-button">
-        <%= f.submit "Submit Trip", class: "btn btn-block btn-success user-trip-post-button"%>
+        <div class="form-field trip-post-button">
+        <%= t.submit "Submit Trip", class: "btn btn-block btn-success trip-post-button"%>
         </div>
       <% end %>
     </div>

@@ -14,3 +14,10 @@
  *= require_tree .
  *= require_self
  */
+
+.new-trip-header {
+  text-align: center;
+}
+.user-show-header {
+  text-align: center;
+}

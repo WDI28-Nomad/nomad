@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'trips/new'
-
-  get 'trips/show'
-
-  get 'trips/edit'
-
   devise_for :users
   root to: 'welcome#index'
   get 'welcome/index'
