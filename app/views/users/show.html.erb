@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="col-sm-3">
+  <%= render "sidebar" %>
+  <br>
+  <%= render "my_trips" %>
+</div>
+<div class="col-sm-9">
+  <h1 class="page-title">My Trips</h1>
+
+  <div class="map"><h1>Map Goes Here</h1></div>
+
+  <%= render "add_trip" %>
+
+</div>

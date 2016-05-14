@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   get 'welcome/index'
 
-  get 'users/:id', to: 'users#show', as: 'user'
+  resources :users do
+    resources :trips
+  end
 
   # devise_scope :user do
   #   get 'sign_in', to: 'devise/sessions#new'
