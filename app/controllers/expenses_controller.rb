@@ -50,6 +50,17 @@ class ExpensesController < ApplicationController
   end
 
   def destroy
+    @user = current_user
+    @trips = @user.trips
+    @expense = Expense.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
+    if @expense.destroy
+      flash[:notice] = "Expense succesfully deleted!"
+      redirect_to user_trip_path(@user, @trip)
+    else
+      flash[:error] = @expense.errors.full_messages.join(", ")
+      redirect_to user_trip_path(@user, @trip)
+    end
   end
 
   private
