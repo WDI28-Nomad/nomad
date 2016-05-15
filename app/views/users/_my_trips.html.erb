@@ -8,7 +8,7 @@
     <div class="my-trips">
       <% @trips.each do |t| %>
         <div class="my-trips-trip">
-          <%= link_to "#{t.name}", user_trip_path(@user, t), class: "my-trips-trip"%>
+          <%= link_to "#{h truncate(t.name, :length => 35)}", user_trip_path(@user, t), class: "my-trips-trip"%>
         </div>
       <% end %>
     </div>
