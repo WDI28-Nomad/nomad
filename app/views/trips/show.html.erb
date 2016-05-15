@@ -22,9 +22,16 @@
   <br>
   <hr>
 
-  <%= link_to "", new_user_trip_expense_path(@user, @trip), class: "glyphicon glyphicon-plus" %>
+  <%= link_to "Back to My Trips", user_path(@user), class: "btn btn-primary" %>
 
-  <%= render 'expenses/form' %>
+  <div class="add-expense-button" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
+    <span class = "add-expense-button">Add Expense <%= link_to "", new_user_trip_expense_path(@user, @trip), class: "glyphicon glyphicon-plus glyphicon-sm" %></span> 
+  </div>
+
+  <div class="collapse" id="collapseExample">
+    <%= render 'expenses/form' %>
+  </div>
+
   <div class="col-sm-6 col-sm-offset-2">
     <h5>Expenses: </h5>
     <ul>
@@ -39,6 +46,4 @@
     </ul>
     <br>
   </div>
-
-  <%= link_to "Back to My Trips", user_path(@user), class: "btn btn-primary" %>
 </div>
