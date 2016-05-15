@@ -22,10 +22,17 @@
   <br>
   <hr>
 
-  <%= link_to "", new_user_trip_expense_path(@user, @trip), class: "glyphicon glyphicon-plus" %>
+  <%= link_to "Back to My Trips", user_path(@user), class: "btn btn-primary" %>
 
-  <%= render 'expenses/form' %>
-  <div class="col-sm-6 col-sm-offset-2">
+  <div class="add-expense-button" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
+    <span class = "btn btn-primary btn-lg add-expense-button">Add Expense</span> 
+  </div>
+
+  <div class="collapse" id="collapseExample">
+    <%= render 'expenses/form' %>
+  </div>
+
+  <div class="col-sm-5 col-sm-offset-3">
     <h5>Expenses: </h5>
     <ul>
       <% @expenses.each do |e| %>
@@ -39,6 +46,4 @@
     </ul>
     <br>
   </div>
-
-  <%= link_to "Back to My Trips", user_path(@user), class: "btn btn-primary" %>
 </div>

@@ -53,3 +53,12 @@
   padding: 10px; 
   background-color: #f4f4f4;
 }
+.add-expense-button {
+  font-size: 24px;
+  font-weight: 1.2em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.glyphicon .small {
+  font-size: 1.2em;
+}
