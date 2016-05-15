@@ -36,7 +36,7 @@
     <h5>Expenses: </h5>
     <ul>
       <% @expenses.each do |e| %>
-        <li> <%= e.name %> <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil" %>
+        <li> <%= e.name %> - <%= e.amount %> - <%= e.expense_type %> <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil" %>
              <%= link_to "", user_trip_expense_path(@user, @trip, e),
              method: :delete,
              data: {confirm: "Are you sure you want to delete #{e.name}?"},
