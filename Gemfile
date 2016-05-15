@@ -22,11 +22,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+#devise gem
 gem 'devise'
-
 #pic Uploader
 gem 'carrierwave'
+#geocoder gem gets address's geo coordinates
+gem 'geocoder'
+#gem for adding google maps
+gem 'gmaps4rails'
+
 
 gem 'protected_attributes'
 
