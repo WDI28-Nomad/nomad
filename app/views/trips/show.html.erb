@@ -25,14 +25,14 @@
   <%= link_to "Back to My Trips", user_path(@user), class: "btn btn-primary" %>
 
   <div class="add-expense-button" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
-    <span class = "add-expense-button">Add Expense <%= link_to "", new_user_trip_expense_path(@user, @trip), class: "glyphicon glyphicon-plus glyphicon-sm" %></span> 
+    <span class = "btn btn-primary btn-lg add-expense-button">Add Expense</span> 
   </div>
 
   <div class="collapse" id="collapseExample">
     <%= render 'expenses/form' %>
   </div>
 
-  <div class="col-sm-6 col-sm-offset-2">
+  <div class="col-sm-5 col-sm-offset-3">
     <h5>Expenses: </h5>
     <ul>
       <% @expenses.each do |e| %>
