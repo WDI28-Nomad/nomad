@@ -48,7 +48,7 @@
       <tr class="expense-row">
         <td class="expense-table"><%= e.name %></td>
         <td class="expense-table"><%= e.expense_type %></td>
-        <td class="expense-table"><%= e.amount %></td>
+        <td class="expense-table"><%= click_to_edit e, path: user_trip_expense_path(@user, @trip, e), attribute: :amount, deletable: true %></td>
         <td class="expense-table">
            <%= link_to "", user_trip_expense_path(@user, @trip, e),
            method: :delete,

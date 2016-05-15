@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    abracadabra (1.2.0)
+      rails (>= 3.2.11)
     actionmailer (4.2.6)
       actionpack (= 4.2.6)
       actionview (= 4.2.6)
@@ -179,6 +181,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  abracadabra
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
