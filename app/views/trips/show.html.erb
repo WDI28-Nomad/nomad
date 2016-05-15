@@ -36,12 +36,21 @@
     <h5>Expenses: </h5>
     <ul>
       <% @expenses.each do |e| %>
-        <li> <%= e.name %> - <%= e.amount %> - <%= e.expense_type %> <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil" %>
+        <li> <%= e.name %> - 
+             <%= e.amount %> - 
+             <%= e.expense_type %> 
+             <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %>
              <%= link_to "", user_trip_expense_path(@user, @trip, e),
              method: :delete,
              data: {confirm: "Are you sure you want to delete #{e.name}?"},
-             class: "glyphicon glyphicon-trash" %>
+             class: "glyphicon glyphicon-trash pull-right" %>
         </li>
+        <% if e.expense_type == "Airfare" %>
+          <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
+        <% elsif e.expense_type == "Lodging" %>
+          <!-- Add the Origin City to the URL -->
+          <a href="http://www.airbnb.com/" target="_blank">Find A Place To Stay</a>
+        <% end %>
       <% end %>
     </ul>
     <br>
