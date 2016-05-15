@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 #pic Uploader
 gem 'carrierwave'
+gem 'mini_magick'
 #geocoder gem gets address's geo coordinates
 gem 'geocoder'
 #gem for adding google maps
