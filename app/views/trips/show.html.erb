@@ -50,7 +50,7 @@
         <% elsif e.expense_type == "Lodging" %>
           <!-- Add the Origin City to the URL -->
           <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
-          <a href="/airbnb_rentals/index">Airbnb</a>
+          <%= link_to "Airbnb", airbnb_search_path %>
         <% end %>
       <% end %>
     </ul>
