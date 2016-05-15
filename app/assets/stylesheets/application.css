@@ -58,3 +58,15 @@
 .glyphicon .small {
   font-size: 1.2em;
 }
+.profile-info {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.profile_pic {
+  margin-left: 10px;
+}
+.pagination {
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+}

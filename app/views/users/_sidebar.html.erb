@@ -1,12 +1,14 @@
 <div class="profile_pic">
 <% if current_user.avatar.present? %>
-<%= link_to image_tag(current_user.avatar_url, :class => "img-circle center-block"), current_user %>
+<%= link_to image_tag(current_user.avatar_url, :class => "img-circle pull-left"), current_user %>
 <% else %>
-<%= link_to image_tag(('default.png').to_s, :class => "img-circle center-block"), current_user  %>
+<%= link_to image_tag(('default.png').to_s, :class => "img-circle pull-left"), current_user  %>
 <% end %>
 </div>
-<p> <%= @user.username %> </p>
-<p> <%= @user.current_city %> </p>
-<p> <%= @user.created_at.strftime("Date joined: %m/%d/%Y") %> </p>
+<span class="profile-info pull-right">
+  <div> <%= @user.username %> </div>
+  <div> <%= @user.current_city %> </div>
+  <div> <%= @user.created_at.strftime("Date joined: %m/%d/%Y") %> </div>
 
-<%= button_to "Edit", edit_user_path(@user), method: :get %>
+  <%= button_to "Edit", edit_user_path(@user), method: :get %>
+</span>
