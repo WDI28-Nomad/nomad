@@ -70,3 +70,9 @@
   font-size: 14px;
   text-align: center;
 }
+.expense-table {
+  margin: 10px;
+}
+td {
+  width: 150px;
+}

@@ -36,28 +36,40 @@
     <%= render 'expenses/form' %>
   </div>
 
-  <div class="col-sm-5 col-sm-offset-3">
+  <div class="col-sm-8 col-sm-offset-2">
     <h5>Expenses: </h5>
-    <ul>
+    <table>
+      <th>Name</th>
+      <th>Expense Type</th>
+      <th>Amount</th>
+      <th></th>
       <% @expenses.each do |e| %>
-        <li> <%= e.name %> - 
-             <%= e.amount %> - 
-             <%= e.expense_type %> 
-             <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %>
+        <tr class="expense-table">
+          <td class="expense-table"><%= e.name %></td>
+          <td class="expense-table"><%= e.expense_type %></td>
+          <td class="expense-table"><%= e.amount %></td>
+          <td class="expense-table"><%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %>
              <%= link_to "", user_trip_expense_path(@user, @trip, e),
              method: :delete,
              data: {confirm: "Are you sure you want to delete #{e.name}?"},
-             class: "glyphicon glyphicon-trash pull-right" %>
-        </li>
-        <% if e.expense_type == "Airfare" %>
-          <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
-        <% elsif e.expense_type == "Lodging" %>
-          <!-- Add the Origin City to the URL -->
-          <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
-          <%= link_to "Airbnb", airbnb_search_path %>
-        <% end %>
+             class: "glyphicon glyphicon-trash pull-right" %></td>
+        </tr>
+        <tr>
+          <% if e.expense_type == "Airfare" %>
+            <td>
+              <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
+            </td>
+          <% elsif e.expense_type == "Lodging" %>
+            <!-- Add the Origin City to the URL -->
+            <td>
+              <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
+              <%= link_to "Airbnb", airbnb_search_path %>
+            </td>
+            
+          <% end %>
+        </tr>
       <% end %>
-    </ul>
+    </table>
     <br>
   </div>
 </div>
