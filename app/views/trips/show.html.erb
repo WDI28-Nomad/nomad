@@ -37,37 +37,38 @@
   </div>
 
   <div class="col-sm-8 col-sm-offset-2">
-    <h5>Expenses: </h5>
     <table>
-      <th>Name</th>
-      <th>Expense Type</th>
-      <th>Amount</th>
-      <th></th>
+      <tr class="expense-header-row">
+        <td class="expense-table-header">Name</td>
+        <td class="expense-table-header">Expense Type</td>
+        <td class="expense-table-header">Amount</td>
+        <td class="expense-table-header"></td>
+      </tr>
       <% @expenses.each do |e| %>
-        <tr class="expense-table">
-          <td class="expense-table"><%= e.name %></td>
-          <td class="expense-table"><%= e.expense_type %></td>
-          <td class="expense-table"><%= e.amount %></td>
-          <td class="expense-table"><%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %>
-             <%= link_to "", user_trip_expense_path(@user, @trip, e),
-             method: :delete,
-             data: {confirm: "Are you sure you want to delete #{e.name}?"},
-             class: "glyphicon glyphicon-trash pull-right" %></td>
-        </tr>
-        <tr>
-          <% if e.expense_type == "Airfare" %>
-            <td>
-              <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
-            </td>
-          <% elsif e.expense_type == "Lodging" %>
-            <!-- Add the Origin City to the URL -->
-            <td>
-              <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
-              <%= link_to "Airbnb", airbnb_search_path %>
-            </td>
-            
-          <% end %>
-        </tr>
+      <tr class="expense-row">
+        <td class="expense-table"><%= e.name %></td>
+        <td class="expense-table"><%= e.expense_type %></td>
+        <td class="expense-table"><%= e.amount %></td>
+        <td class="expense-table">
+           <%= link_to "", user_trip_expense_path(@user, @trip, e),
+           method: :delete,
+           data: {confirm: "Are you sure you want to delete #{e.name}?"},
+           class: "glyphicon glyphicon-trash pull-right" %>
+           <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %></td>
+      </tr>
+      <tr>
+        <% if e.expense_type == "Airfare" %>
+          <td>
+            <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
+          </td>
+        <% elsif e.expense_type == "Lodging" %>
+          <!-- Add the Origin City to the URL -->
+          <td>
+            <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
+            <%= link_to "Airbnb", airbnb_search_path %>
+          </td>
+        <% end %>
+      </tr>
       <% end %>
     </table>
     <br>

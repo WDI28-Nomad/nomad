@@ -25,10 +25,16 @@
 .form-control {
   margin-bottom: 10px;
 }
+
+/* Map */
+
 .map {
   margin: 150px;
   text-align: center;
 }
+
+/* My Trips sidebar */
+
 .my-trips-header {
   text-align: center;
   margin-bottom: 20px;
@@ -44,6 +50,8 @@
   font-size: 18px;
   font-weight: 1.2em
 }
+
+/* Sidebar */
 
 .sidebar-container {
   padding: 10px; 
@@ -70,9 +78,18 @@
   font-size: 14px;
   text-align: center;
 }
-.expense-table {
+
+/* Expense Table */
+.expense-table-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.expense-row {
   margin: 10px;
+  background-color: #f4f4f4
 }
 td {
   width: 150px;
+  height: 40px;
 }
