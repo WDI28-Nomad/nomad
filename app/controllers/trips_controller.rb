@@ -6,6 +6,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @user = User.find_by_id(@trip.user_id)
     @trips = @user.trips
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
     @expense = Expense.new
     @expenses = @trip.expenses  
   end

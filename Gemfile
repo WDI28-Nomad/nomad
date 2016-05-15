@@ -30,7 +30,8 @@ gem 'carrierwave'
 gem 'geocoder'
 #gem for adding google maps
 gem 'gmaps4rails'
-
+#pagination gem
+gem 'kaminari'
 
 gem 'protected_attributes'
 
