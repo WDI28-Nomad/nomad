@@ -32,6 +32,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 #pagination gem
 gem 'kaminari'
+#httparty
+gem 'httparty'
 
 gem 'protected_attributes'
 
