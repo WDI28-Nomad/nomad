@@ -55,6 +55,7 @@
 
 .sidebar-container {
   padding: 10px; 
+  margin-left: 10px;
   background-color: #f4f4f4;
 }
 .add-expense-button {
