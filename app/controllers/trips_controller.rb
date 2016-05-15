@@ -15,6 +15,7 @@ class TripsController < ApplicationController
     @user = current_user
     @trip = Trip.new
     @trips = @user.trips.all.order("created_at")
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
   end
 
   def create
@@ -33,6 +34,7 @@ class TripsController < ApplicationController
   def edit
     @user = current_user
     @trips = @user.trips.all.order("created_at")
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
     @trip = @user.trips.find(params[:id])
 
     if @user != current_user
