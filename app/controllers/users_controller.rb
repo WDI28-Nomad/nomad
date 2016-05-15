@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     @trip = Trip.new
     @trips = @user.trips
+    @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
+      marker.lat trip.latitude
+      marker.lng trip.longitude
+      marker.infowindow trip.destination
+    end
   end
 
   def new
