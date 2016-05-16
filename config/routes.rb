@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'airbnb/search', to: 'airbnb_rentals#index'
+  get 'airbnb/search', to: 'airbnb_listings#index'
 
   devise_for :users
   root to: 'welcome#index'
