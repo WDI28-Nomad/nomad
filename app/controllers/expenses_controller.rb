@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+
   def index
   end
 
@@ -12,9 +13,12 @@ class ExpensesController < ApplicationController
   def create
     @user = current_user
     @trips = @user.trips
-    @expense = Expense.new(expense_params)
     @trip = Trip.find(params[:trip_id])
-    if @expense.save
+    @expense = Expense.new(expense_params)
+    if @expense.start_date > @expense.end_date
+      flash[:error] = "Can't time travel"
+      redirect_to user_trip_path(@user, @trip)
+    elsif @expense.save
       @trip.expenses << @expense
       flash[:notice] = "Expense successfully created!"
       redirect_to user_trip_path(@user, @trip)
