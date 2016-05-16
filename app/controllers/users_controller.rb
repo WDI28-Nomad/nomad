@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
       marker.lat trip.latitude
       marker.lng trip.longitude
-      marker.infowindow trip.destination
+      marker.infowindow trip.name
     end
   end
 
