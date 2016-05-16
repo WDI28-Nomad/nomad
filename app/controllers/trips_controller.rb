@@ -1,21 +1,20 @@
 class TripsController < ApplicationController
 
   #TODO: Helper Method for setting trips
+  before_action :set_sidebar
 
   def show
     @trip = Trip.find(params[:id])
-    @user = User.find_by_id(@trip.user_id)
-    @trips = @user.trips.all.order("created_at")
-    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
+    @user = current_user
     @expense = Expense.new
     @expenses = @trip.expenses  
   end
 
   def new
     @user = current_user
-    @trip = Trip.new
-    @trips = @user.trips.all.order("created_at")
-    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
+    @trip = Trip.create(name: "untitled")
+
+    redirect_to user_trip_path(current_user, @trip)
   end
 
   def create
@@ -33,8 +32,7 @@ class TripsController < ApplicationController
 
   def edit
     @user = current_user
-    @trips = @user.trips.all.order("created_at")
-    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
+
     @trip = @user.trips.find(params[:id])
 
     if @user != current_user
@@ -59,11 +57,16 @@ class TripsController < ApplicationController
       flash[:error] = @trip.errors.full_messages
     end
   end
-end
 
+  private
 
-private
+  def trip_params
+    params.require(:trip).permit(:name, :trip_type, :budget, :origin, :destination, :description, :departure_date, :return_date, :user_id)
+  end
 
-def trip_params
-  params.require(:trip).permit(:name, :trip_type, :budget, :origin, :destination, :description, :departure_date, :return_date, :user_id)
+  def set_sidebar
+    @trip = Trip.new
+    @trips = current_user.trips.all.order("created_at")
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
+  end
 end
