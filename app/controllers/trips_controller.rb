@@ -7,7 +7,12 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @user = current_user
     @expense = Expense.new
-    @expenses = @trip.expenses  
+    @expenses = @trip.expenses
+    @hash = Gmaps4rails.build_markers(@trip) do |trip, marker|
+      marker.lat trip.latitude
+      marker.lng trip.longitude
+      marker.infowindow trip.destination
+    end
   end
 
   def new
