@@ -25,20 +25,22 @@
 .form-control {
   margin-bottom: 10px;
 }
+
+/* Map */
+
 .map {
   margin: 150px;
   text-align: center;
 }
+
+/* My Trips sidebar */
+
 .my-trips-header {
   text-align: center;
   margin-bottom: 20px;
 }
-.my-trips-container {
-  height: 350px;
-}
 .my-trips {
-  overflow:auto;
-  height: 300px;
+  height: 325px;
 }
 .my-trips-trip {
   margin-bottom: 10px;
@@ -49,8 +51,11 @@
   font-weight: 1.2em
 }
 
+/* Sidebar */
+
 .sidebar-container {
   padding: 10px; 
+  margin-left: 10px;
   background-color: #f4f4f4;
 }
 .add-expense-button {
@@ -61,4 +66,31 @@
 }
 .glyphicon .small {
   font-size: 1.2em;
+}
+.profile-info {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.profile_pic {
+  margin-left: 10px;
+}
+.pagination {
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Expense Table */
+.expense-table-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.expense-row {
+  margin: 10px;
+  background-color: #f4f4f4
+}
+td {
+  width: 150px;
+  height: 40px;
 }

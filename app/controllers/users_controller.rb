@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
     @trip = Trip.new
-    @trips = @user.trips
+    @trips = @user.trips.all.order("created_at")
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
     @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
       marker.lat trip.latitude
       marker.lng trip.longitude

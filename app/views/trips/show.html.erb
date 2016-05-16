@@ -1,8 +1,12 @@
 <div class="col-sm-3">
   <!-- When rendering a partial from another folder, you dont need the underscore in the name of the partial -->
-  <%= render "users/sidebar" %>
+  <div class="row sidebar">
+  <%= render "/users/sidebar" %>
+  </div>
   <br>
-  <%= render "users/my_trips" %>
+  <div class="row">
+  <%= render "/users/my_trips" %>
+  </div>
 </div>
 <div class="col-sm-9">
   <h1 class="page-title"><%= @trip.name %></h1>
@@ -32,18 +36,41 @@
     <%= render 'expenses/form' %>
   </div>
 
-  <div class="col-sm-5 col-sm-offset-3">
-    <h5>Expenses: </h5>
-    <ul>
+  <div class="col-sm-8 col-sm-offset-2">
+    <table>
+      <tr class="expense-header-row">
+        <td class="expense-table-header">Name</td>
+        <td class="expense-table-header">Expense Type</td>
+        <td class="expense-table-header">Amount</td>
+        <td class="expense-table-header"></td>
+      </tr>
       <% @expenses.each do |e| %>
-        <li> <%= e.name %> <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil" %>
-             <%= link_to "", user_trip_expense_path(@user, @trip, e),
-             method: :delete,
-             data: {confirm: "Are you sure you want to delete #{e.name}?"},
-             class: "glyphicon glyphicon-trash" %>
-        </li>
+      <tr class="expense-row">
+        <td class="expense-table"><%= e.name %></td>
+        <td class="expense-table"><%= e.expense_type %></td>
+        <td class="expense-table"><%= e.amount %></td>
+        <td class="expense-table">
+           <%= link_to "", user_trip_expense_path(@user, @trip, e),
+           method: :delete,
+           data: {confirm: "Are you sure you want to delete #{e.name}?"},
+           class: "glyphicon glyphicon-trash pull-right" %>
+           <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %></td>
+      </tr>
+      <tr>
+        <% if e.expense_type == "Airfare" %>
+          <td>
+            <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
+          </td>
+        <% elsif e.expense_type == "Lodging" %>
+          <!-- Add the Origin City to the URL -->
+          <td>
+            <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
+            <%= link_to "Airbnb", airbnb_search_path %>
+          </td>
+        <% end %>
+      </tr>
       <% end %>
-    </ul>
+    </table>
     <br>
   </div>
 </div>

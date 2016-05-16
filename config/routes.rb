@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'airbnb/search', to: 'airbnb_rentals#index'
+
   devise_for :users
   root to: 'welcome#index'
   get 'welcome/index'
@@ -9,7 +11,6 @@ Rails.application.routes.draw do
       resources :expenses
     end
   end
-
 
 #   new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
 #       user_session POST   /users/sign_in(.:format)                                   devise/sessions#create
