@@ -41,6 +41,5 @@ class UsersController < ApplicationController
     @user = current_user
     @trip = Trip.new
     @trips = @user.trips.all.order("created_at")
-    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
   end
 end

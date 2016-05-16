@@ -67,6 +67,5 @@ class TripsController < ApplicationController
   def set_sidebar
     @trip = Trip.new
     @trips = current_user.trips.all.order("created_at")
-    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
   end
 end
