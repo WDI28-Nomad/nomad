@@ -1,0 +1,2 @@
+module AirbnbListingsHelper
+end
