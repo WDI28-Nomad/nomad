@@ -48,7 +48,7 @@
       <tr class="expense-row">
         <td class="expense-table"><%= e.name %></td>
         <td class="expense-table"><%= e.expense_type %></td>
-        <td class="expense-table"><%= e.amount %></td>
+        <td class="expense-table"><%= click_to_edit e, path: user_trip_expense_path(@user, @trip, e), attribute: :amount, deletable: true %></td>
         <td class="expense-table">
            <%= link_to "", user_trip_expense_path(@user, @trip, e),
            method: :delete,
@@ -65,7 +65,7 @@
           <!-- Add the Origin City to the URL -->
           <td>
             <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
-            <%= link_to "Airbnb", airbnb_search_path %>
+            <a href="https://www.airbnb.com" target="_blank">Airbnb</a>
           </td>
         <% end %>
       </tr>

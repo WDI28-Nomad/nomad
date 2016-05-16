@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap.min
+ *= require abracadabra
  *= require_tree .
  *= require_self
  */
@@ -94,3 +95,4 @@ td {
   width: 150px;
   height: 40px;
 }
+

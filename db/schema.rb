@@ -16,12 +16,6 @@ ActiveRecord::Schema.define(version: 20160515062602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "airbnb_rentals", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "expenses", force: :cascade do |t|
     t.string   "name"
     t.string   "expense_type"
