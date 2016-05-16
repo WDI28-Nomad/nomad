@@ -12,13 +12,12 @@ class TripsController < ApplicationController
 
   def new
     @user = current_user
-
     redirect_to user_trip_path(current_user, @trip)
   end
 
   def create
     @user = current_user
-    @trip = Trip.create(name: "untitled")
+    @trip = Trip.create(name: "New Trip "+(Trip.last.id+1).to_s)
     @trip.user_id = current_user.id
     if @trip.save
       flash[:notice] = "New Trip Created!"
