@@ -42,6 +42,8 @@
         <td class="expense-table-header">Name</td>
         <td class="expense-table-header">Expense Type</td>
         <td class="expense-table-header">Amount</td>
+        <td class="expense-table-header">Start Date</td>
+        <td class="expense-table-header">End Date</td>
         <td class="expense-table-header"></td>
       </tr>
       <% @expenses.each do |e| %>
@@ -49,6 +51,8 @@
         <td class="expense-table"><%= e.name %></td>
         <td class="expense-table"><%= e.expense_type %></td>
         <td class="expense-table"><%= click_to_edit e, path: user_trip_expense_path(@user, @trip, e), attribute: :amount, deletable: true %></td>
+        <td class="expense-table"><%= e.start_date %></td>
+        <td class="expense-table"><%= e.end_date %></td>
         <td class="expense-table">
            <%= link_to "", user_trip_expense_path(@user, @trip, e),
            method: :delete,
@@ -64,7 +68,7 @@
         <% elsif e.expense_type == "Lodging" %>
           <!-- Add the Origin City to the URL -->
           <td>
-            <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a> |
+            <a href="https://www.kayak.com/hotels" target="_blank">Search Hotels</a>
             <a href="https://www.airbnb.com" target="_blank">Airbnb</a>
           </td>
         <% end %>

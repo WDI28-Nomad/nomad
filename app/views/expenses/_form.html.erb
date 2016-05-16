@@ -9,7 +9,7 @@
           <%= f.text_field :name, required: true, placeholder: "Name", class:"form-control" %>
         </div>
         <div class="form-field">
-          <%= f.select :expense_type, ["","Airfare","Lodging","Meals","Fun"], class:"form-control" %>
+          <%= f.select :expense_type, ["Choose Expense Type","Airfare","Lodging","Meals","Fun"], class:"form-control select" %>
         </div>
         <div class="form-field">
           <%= f.number_field :amount, required: true, placeholder: "Budget", class:"form-control" %>
