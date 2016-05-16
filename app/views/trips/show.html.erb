@@ -21,15 +21,15 @@
 
   <% if current_user %>
     <%= link_to "", edit_user_trip_path(@user, @trip), class: "glyphicon glyphicon-pencil" %>
-    <%= link_to "", user_trip_path(@user, @trip), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"}, class: "glyphicon glyphicon-trash" %>
+    <%= link_to "", user_trip_path(@user, @trip), :"data-no-turbolink" => true, method: :delete, data: {confirm: "Are you sure you want to delete this trip?"}, class: "glyphicon glyphicon-trash" %>
   <% end %>
   <br>
   <hr>
 
-  <%= link_to "Back to My Trips", user_path(@user), class: "btn btn-primary" %>
+  <%= link_to "Back to My Trips", user_path(@user), :"data-no-turbolink" => true, class: "btn btn-primary" %>
 
   <div class="add-expense-button" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
-    <span class = "btn btn-primary btn-lg add-expense-button">Add Expense</span> 
+    <span class = "btn btn-primary btn-lg add-expense-button">Add Expense</span>
   </div>
 
   <div class="collapse" id="collapseExample">
