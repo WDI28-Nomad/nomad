@@ -5,13 +5,17 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @user = User.find_by_id(@trip.user_id)
-    @trips = @user.trips
+    @trips = @user.trips.all.order("created_at")
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
+    @expense = Expense.new
+    @expenses = @trip.expenses  
   end
 
   def new
     @user = current_user
     @trip = Trip.new
-    @trips = @user.trips
+    @trips = @user.trips.all.order("created_at")
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
   end
 
   def create
@@ -29,7 +33,8 @@ class TripsController < ApplicationController
 
   def edit
     @user = current_user
-    @trips = @user.trips
+    @trips = @user.trips.all.order("created_at")
+    @trips = Kaminari.paginate_array(@trips).page(params[:page]).per(7)
     @trip = @user.trips.find(params[:id])
 
     if @user != current_user

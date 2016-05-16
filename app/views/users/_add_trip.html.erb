@@ -11,6 +11,9 @@
         <div class="form-field">
           <%= t.text_field :trip_type, required: true, placeholder: "Trip Type", class:"form-control" %>
         </div>
+        <div class="form-field">
+          <%= t.text_field :destination, required: true, placeholder: "Destination", class:"form-control" %>
+        </div>
         <div class="form-field trip-post-button">
         <%= t.submit "Submit", class: "btn btn-block btn-success trip-post-button"%>
         </div>
