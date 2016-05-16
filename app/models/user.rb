@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+require 'carrierwave/processing/mini_magick'
   has_many :trips
 
   # Include default devise modules. Others available are:
