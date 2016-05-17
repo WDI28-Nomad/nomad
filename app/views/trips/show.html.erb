@@ -92,7 +92,7 @@
 <!-- google maps javascript -->
 <script type='text/javascript'>
 var triphash = <%=raw @hash.to_json %>;
-console.log(triphash[0]);
+console.log(triphash);
 $(document).on("ready page:load", function(){
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
