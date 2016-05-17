@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_sidebar
 
   def show
     @user = User.find_by_id(params[:id])
-    @trip = Trip.new
-    @trips = @user.trips
+    @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
+      marker.lat trip.latitude
+      marker.lng trip.longitude
+      marker.infowindow trip.name
+    end
   end
 
   def new
@@ -31,5 +35,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city, :avatar, :username)
+  end
+
+  def set_sidebar
+    @user = current_user
+    @trip = Trip.new
+    @trips = @user.trips.all.order("created_at")
   end
 end
