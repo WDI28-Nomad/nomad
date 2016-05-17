@@ -41,6 +41,10 @@
   margin-bottom: 20px;
 }
 .my-trips {
+  height: 350px;
+}
+.trips-container {
+  overflow:auto;
   height: 325px;
 }
 .my-trips-trip {
@@ -54,7 +58,7 @@
 
 /* Sidebar */
 
-.sidebar-container {
+.mytrips-container {
   padding: 10px; 
   margin-left: 10px;
   background-color: #f4f4f4;
