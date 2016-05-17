@@ -1,49 +1,57 @@
 $(function () {
-  var currentTotal = 0;
-  var totalExpensesSeries = [];
+  var totalExpenses = 0;
+  var expensesSeries = [];
   var totalBudget = parseFloat($('#trip-budget').html());
-
 
   function calculateTotal() {
     // grab all expense rows (tr)
     var expenseRows = document.querySelectorAll('.expense-row');
-    
+    // iterate over each expense
     expenseRows.forEach(function(row){
-      currentTotal += parseFloat($(row).data('expenseAmount'));
+      // add the expense amount to the total
+      totalExpenses += parseFloat($(row).data('expenseAmount'));
+      // find the expense name
       var expenseName = $(row).data('expenseName');
-      totalExpensesSeries.push({
+      // add the expense object to the data series
+      expensesSeries.push({
         name: $(row).data('expenseName'),
         data: [parseFloat($(row).data('expenseAmount'))]
       });
     })
-    console.info('after calculateTotal', currentTotal);
-    console.info(totalExpensesSeries);
+
+    // // Checks for totalExpenses amount and the array of expenses
+    // console.info('final calculateTotal', totalExpenses);
+    // console.info(expensesSeries);
   }
+
   calculateTotal();
 
-  //@todo: Figure out how to draw a marker along y-values for totalBudget amt.
+  //@todo: Figure out how to draw a marker along y-values for trip budget amount.
   var chartUpdateConfig = {
-    yAxis: { // controls the total width of the graph
-      max: currentTotal
+    // controls the total width of the graph
+    yAxis: { 
+      max: totalExpenses
     },
-    series: totalExpensesSeries
+    // data fed into the graph
+    series: expensesSeries
   };
 
+  // these attributes shouldn't change when expense/trip values update
   var chartStaticConfig = {
       chart: {
           type: 'bar'
       },
       title: {
-          text: 'Budget Breakdown'
+          text: ''
       },
       xAxis: {
-          categories: ['Budget Breakdown','Total Budget']
+          categories: ['Budget Breakdown']
       },
       yAxis: {
           min: 0,
           title: {
               text: 'Total Cost'
-          }
+          },
       },
       legend: {
           reversed: true

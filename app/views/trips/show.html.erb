@@ -19,10 +19,11 @@
     <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :name %>
   </h1>
   <br>
+
   <!-- Budget Bar -->
   <div id="budget-bar" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
   <script src="javascripts/progress-bar.js"></script>
+  <!-- Budget Bar -->
   
   <h4>Budget: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :budget, id: "trip-budget" %></h4>
   <h4>Origin: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :origin %></h4>
