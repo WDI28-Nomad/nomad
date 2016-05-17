@@ -22,7 +22,7 @@ class TripsController < ApplicationController
 
   def create
     @user = current_user
-    @trip = Trip.create(name: "New Trip "+(Trip.last.id+1).to_s)
+    @trip = Trip.create(name: "New Trip "+(Trip.last.id+1).to_s, budget: 0, origin: "Click here to add a starting point", destination: "Click here to add a destination")
     @trip.user_id = current_user.id
     if @trip.save
       flash[:notice] = "New Trip Created!"
