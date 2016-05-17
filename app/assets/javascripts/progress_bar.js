@@ -63,7 +63,7 @@ $(function () {
       },
       credits: {
       enabled: false
-      }
+      }.
   };
 
   var finalConfig = _.extend({}, chartStaticConfig, chartUpdateConfig);
