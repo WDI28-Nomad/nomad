@@ -15,15 +15,14 @@
   </div>
 </div>
 <div class="col-sm-9">
-  <h1 class="page-title"><%= @trip.name %></h1>
+  <h1 class="page-title"><%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :name %></h1>
 
   <!-- Placeholder for budget bar -->
   <div class="panel-footer"><h1>budget-bar</h1></div>
 
-  <h4>Type: <%= @trip.trip_type %></h4>
-  <h4>Budget: <%= @trip.budget %></h4>
-  <h4>Origin: <%= @trip.origin %></h4>
-  <h4>Destination: <%= @trip.destination %></h4>
+  <h4>Budget: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :budget %></h4>
+  <h4>Origin: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :origin %></h4>
+  <h4>Destination: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :destination %></h4>
 
   <% if current_user %>
     <%= link_to "", edit_user_trip_path(@user, @trip), class: "glyphicon glyphicon-pencil" %>
