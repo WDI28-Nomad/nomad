@@ -16,7 +16,7 @@
 </div>
 <div class="col-sm-9">
   <h1 class="page-title">
-    <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :name %>
+    <%= @trip.name %>
   </h1>
   <br>
 
@@ -26,9 +26,9 @@
   </script>
   <!-- Budget Bar -->
   
-  <h4>Budget: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :budget, id: "trip-budget" %></h4>
-  <h4>Origin: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :origin %></h4>
-  <h4>Destination: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :destination %></h4>
+  <h4>Budget: <span id="trip-budget">$<%= @trip.budget %></span></h4>
+  <h4>Origin: <span id="trip-budget"><%= @trip.origin %></h4>
+  <h4>Destination: <%= @trip.destination %></h4>
 
   <% if current_user %>
     <%= link_to "", edit_user_trip_path(@user, @trip), class: "glyphicon glyphicon-pencil" %>
@@ -64,7 +64,7 @@
           data-expense-name="<%= e.name %>">
         <td class="expense-table"><%= e.name %></td>
         <td class="expense-table"><%= e.expense_type %></td>
-        <td class="expense-table"><%= click_to_edit e, path: user_trip_expense_path(@user, @trip, e), attribute: :amount, deletable: true %></td>
+        <td class="expense-table"><%= e.amount %></td>
         <td class="expense-table"><%= e.start_date %></td>
         <td class="expense-table"><%= e.end_date %></td>
         <td class="expense-table">
