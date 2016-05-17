@@ -15,12 +15,101 @@
   </div>
 </div>
 <div class="col-sm-9">
-  <h1 class="page-title"><%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :name %></h1>
-
+  <h1 class="page-title">
+    <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :name %>
+  </h1>
+  <br>
   <!-- Placeholder for budget bar -->
-  <div class="panel-footer"><h1>budget-bar</h1></div>
+  <div id="budget-bar" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  <script>
 
-  <h4>Budget: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :budget %></h4>
+    $(function () {
+      var currentTotal = 0;
+      var totalExpensesSeries = [];
+      var totalBudget = parseFloat($('#trip-budget').html());
+
+
+      function calculateTotal() {
+        // grab all expense rows (tr)
+        var expenseRows = document.querySelectorAll('.expense-row');
+        
+        expenseRows.forEach(function(row){
+          currentTotal += parseFloat($(row).data('expenseAmount'));
+          var expenseName = $(row).data('expenseName');
+          totalExpensesSeries.push({
+            name: $(row).data('expenseType'),
+            data: [parseFloat($(row).data('expenseAmount'))]
+          });
+        })  
+        console.info('after calculateTotal', currentTotal);
+        console.info(totalExpensesSeries);
+      
+      }
+      calculateTotal();
+
+      //@todo: Figure out how to draw a marker along y-values for totalBudget amt.
+      var chartUpdate = {
+        yAxis: { // controls the total width of the graph
+          max: 2000
+        },
+        series: totalExpensesSeries
+      };
+
+      var chartConfig = {
+          chart: {
+              type: 'bar'
+          },
+          title: {
+              text: 'Budget Breakdown'
+          },
+          xAxis: {
+              categories: ['Budget Breakdown'],
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: 'Total Cost'
+              }
+          },
+          legend: {
+              reversed: true
+          },
+          plotOptions: {
+              series: {
+                  stacking: 'normal'
+              }
+          }
+      };
+
+      var finalConfig = _.extend({}, chartConfig, chartUpdate);
+      
+      function putChartOnPage (chartConfig){
+        // put highcharts onto the DOM
+        $('#budget-bar').highcharts(chartConfig);  
+      }
+      putChartOnPage(finalConfig);
+
+      
+    });
+  </script>
+  
+
+
+  <!-- bootstrap -->
+  <!-- <div class="progress">
+    <input type="text" >
+    <div class="progress-bar progress-bar-success" style="width: <% @trip.budget %>%">
+      <span class="sr-only">35% Complete (success)</span>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+      <span class="sr-only">20% Complete (warning)</span>
+    </div>
+    <div class="progress-bar progress-bar-danger" style="width: 10%">
+      <span class="sr-only">10% Complete (danger)</span>
+    </div>
+  </div> -->
+  <!-- /bootstrap -->
+  <h4>Budget: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :budget, id: "trip-budget" %></h4>
   <h4>Origin: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :origin %></h4>
   <h4>Destination: <%= click_to_edit @trip, path: user_trip_path(@user, @trip), attribute: :destination %></h4>
 
@@ -42,7 +131,7 @@
   </div>
 
   <div class="col-sm-8 col-sm-offset-2">
-    <table>
+    <table id="expense-table">
       <tr class="expense-header-row">
         <td class="expense-table-header">Name</td>
         <td class="expense-table-header">Expense Type</td>
@@ -52,7 +141,10 @@
         <td class="expense-table-header"></td>
       </tr>
       <% @expenses.each do |e| %>
-      <tr class="expense-row">
+      <tr class="expense-row" 
+          data-expense-type="<%= e.expense_type %>" 
+          data-expense-amount="<%=e.amount%>" 
+          data-expense-name="<%= e.name %>">
         <td class="expense-table"><%= e.name %></td>
         <td class="expense-table"><%= e.expense_type %></td>
         <td class="expense-table"><%= click_to_edit e, path: user_trip_expense_path(@user, @trip, e), attribute: :amount, deletable: true %></td>
