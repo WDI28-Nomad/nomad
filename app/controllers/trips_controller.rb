@@ -23,6 +23,7 @@ class TripsController < ApplicationController
   def create
     @user = current_user
     @trip = Trip.new(trip_params)
+    @trip.user_id = current_user.id
     if @trip.save
       flash[:notice] = "New Trip Created!"
       redirect_to user_trip_path(@user, @trip)
