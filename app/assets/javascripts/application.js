@@ -18,3 +18,10 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+
+
+$(window).resize(function(){
+ if( $(window).width()<764 ) {
+  $('.trips-container').removeClass('in');
+ }
+});

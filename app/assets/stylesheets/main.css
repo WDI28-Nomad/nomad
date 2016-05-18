@@ -62,10 +62,9 @@
  .profile_pic {
    margin-left: 10px;
  }
- .pagination {
-   width: 100%;
-   font-size: 14px;
-   text-align: center;
+
+ @media(max-width: 600px) {
+   
  }
 
  /* Expense Table */
