@@ -5,7 +5,8 @@
 //     margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 // }
 .full {
-    background: url('http://bit.ly/1YCHxGx') no-repeat center center fixed;
+    // background: url('http://bit.ly/1YCHxGx') no-repeat center center fixed;
+    background: url('https://goo.gl/3ECqEJ') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -32,7 +33,7 @@
     border: 1px solid white;
 }
 
-.btn.btn-lg {
+#drop-button {
     // positioning
     left: 45%;
     line-height: 25px;
@@ -45,6 +46,22 @@
     color:white;
     font-family: "Muli", sans-serif;
     //border
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid white
+}
+
+#collapsible-about{
+    // positioning
+    left: 12%;
+    margin-top: -100px;
+    position: absolute;
+    top: 80%;
+    width: 80%;
+    // font
+    color:white;
+    font-family: "Muli", sans-serif;
+    //border
+    border-radius:7px;
     background-color: rgba(255,255,255,0.3);
     border: 1px solid white
 }
