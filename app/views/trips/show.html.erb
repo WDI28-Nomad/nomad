@@ -5,23 +5,13 @@
 <!-- scripts needed for google maps -->
 
 <div class="col-sm-3">
-  <!-- When rendering a partial from another folder, you dont need the underscore in the name of the partial -->
-  <div class="row sidebar">
-  <%= render "/users/sidebar" %>
-  </div>
-  <br>
-  <div class="row">
-  <%= render "/users/my_trips" %>
-  </div>
+  <%= render 'users/sidebar' %>
 </div>
 <div class="col-sm-9">
 
   <h2 class="page-title">
     <%= @trip.name %>
   </h2>
-
-
-
 
 <div class="well row">
   <% if !@expenses.empty? %>
