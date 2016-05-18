@@ -14,9 +14,11 @@ $(function () {
         var expenseName = $(expenseRows[i]).data('expenseName');
         // add the expense object to the data series
         expensesSeries.push({
+          type: 'bar',
           name: $(expenseRows[i]).data('expenseName'),
           data: [parseFloat($(expenseRows[i]).data('expenseAmount'))]
         });
+
       }
 
       // // Checks for totalExpenses amount and the array of expenses
@@ -26,31 +28,39 @@ $(function () {
 
     calculateTotal();
 
-    //@todo: Figure out how to draw a marker along y-values for trip budget amount.
-    var chartUpdateConfig = {
-      // controls the total width of the graph
-      yAxis: { 
-        max: totalExpenses
-      },
-      // data fed into the graph
-      series: expensesSeries
-    };
+    var totalBudgetSeries = {
+        type: 'bar',
+        name: 'Total Budget',
+        data: [0, totalBudget],
+        color: '#FF0000',
+        marker: {
+          symbol: 'square',
+        }
+
+    }
+
+    expensesSeries.push(totalBudgetSeries);
+
+    var chartDataConfig = {
+        series: expensesSeries
+    }
 
     // these attributes shouldn't change when expense/trip values update
     var chartStaticConfig = {
-        chart: {
-            type: 'bar'
-        },
         title: {
             text: ''
         },
         xAxis: {
-            categories: ['Budget Breakdown']
+            categories: ['Budget Breakdown'],
+            labels: {
+                enabled: false
+            }
         },
         yAxis: {
             min: 0,
+            max: Math.max(totalExpenses,totalBudget),
             title: {
-                text: 'Total Cost'
+                text: ''
             },
         },
         legend: {
@@ -66,8 +76,8 @@ $(function () {
         }
     };
 
-    var finalConfig = _.extend({}, chartStaticConfig, chartUpdateConfig);
-    
+    var finalConfig = _.extend({}, chartStaticConfig, chartDataConfig);
+
     function putChartOnPage (chartConfig){
       // put highcharts onto the DOM
       $('#budget-bar').highcharts(chartConfig);  
