@@ -52,44 +52,16 @@
 </div>
 
 
-<hr>
+ <hr>
   <div class="add-expense-button pull-right" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false">
     <span class="btn btn-info add-expense-button"> <span class="glyphicon glyphicon-chevron-down"></span> Add Expense</span>
   </div>
 
 
   <h2 class="page-title">Expenses</h2>
-<table class="collapse" id="collapseExample">
 
-</table>
-  <div class="collapse">
-    <%= form_for [@user, @trip, @expense], html: {class: "form-inline"} do |f| %>
-
-      <div class="form-group col-sm-2">
-        <%= f.label :name %>
-        <%= f.text_field :name, placeholder: "Name", class:"form-control" %>
-      </div>
-      <div class="form-group col-sm-2">
-        <%= f.label :expense_type %>
-        <%= f.select :expense_type, ["Choose Expense Type","Airfare","Lodging","Meals","Fun"], class:"form-control select" %>
-      </div>
-
-      <div class="form-group col-sm-2">
-        <%= f.label :amount %>
-        <%= f.number_field :amount, placeholder: "Amount", class:"form-control" %>
-      </div>
-      <div class="form-group col-sm-2">
-        <%= f.label :start_date %>
-        <%= f.date_field :start_date, placeholder: "Start Date", class:"form-control" %>
-      </div>
-      <div class="form-group col-sm-2" style="width: 100px">
-        <%= f.label :end_date %>
-        <%= f.date_field :end_date, placeholder: "End Date", class:"form-control" %>
-      </div>
-      <div class="form-group">
-      <%= f.submit "Submit", class: "btn btn-block btn-success"%>
-      </div>
-    <% end %>
+  <div class="collapse" id="collapseExample">
+    <%= render 'expenses/form' %>
   </div>
 
   <div class="col-sm-12">
