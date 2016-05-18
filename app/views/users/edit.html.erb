@@ -1,36 +1,52 @@
-<%= form_for(@user) do |user| %>
-
-  <div class="field">
-    <%= user.label :first_name %><br />
-    <%= user.text_field :first_name, autofocus: true %>
+<div class="col-sm-3">
+  <!-- When rendering a partial from another folder, you dont need the underscore in the name of the partial -->
+  <div class="row sidebar">
+  <%= render "/users/sidebar" %>
   </div>
-
-  <div class="field">
-    <%= user.label :last_name %><br />
-    <%= user.text_field :last_name, autofocus: true %>
+  <br>
+  <div class="row">
+  <%= render "/users/my_trips" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= user.label :username %><br />
-    <%= user.text_field :username, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= user.label :current_city %><br />
-    <%= user.text_field :current_city, autofocus: true %>
-  </div>
+<div class="col-sm-9">
 
-  <div class="field">
-    <%= user.label :email %><br />
-    <%= user.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= user.label :email %><br />
-    <%= user.file_field :avatar %>
-  </div>
+  <%= form_for(@user) do |user| %>
 
-  <div class="actions">
-    <%= user.submit "Update" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= user.label :first_name %><br />
+      <%= user.text_field :first_name, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= user.label :last_name %><br />
+      <%= user.text_field :last_name, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= user.label :username %><br />
+      <%= user.text_field :username, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= user.label :current_city %><br />
+      <%= user.text_field :current_city, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= user.label :email %><br />
+      <%= user.email_field :email, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= user.label :email %><br />
+      <%= user.file_field :avatar %>
+    </div>
+
+    <div class="actions">
+      <%= user.submit "Update" %>
+    </div>
+  <% end %>
+</div>
