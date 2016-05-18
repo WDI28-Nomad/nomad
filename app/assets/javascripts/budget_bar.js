@@ -45,7 +45,6 @@ $(function () {
         series: expensesSeries
     }
 
-
     // these attributes shouldn't change when expense/trip values update
     var chartStaticConfig = {
         title: {
@@ -59,7 +58,7 @@ $(function () {
         },
         yAxis: {
             min: 0,
-            max: totalExpenses,
+            max: Math.max(totalExpenses,totalBudget),
             title: {
                 text: ''
             },
