@@ -15,7 +15,7 @@ class ExpensesController < ApplicationController
     @trips = @user.trips
     @trip = Trip.find(params[:trip_id])
     @expense = Expense.new(expense_params)
-    if @expense.start_date > @expense.end_date
+    if (@expense.start_date && @expense.end_date) && (@expense.start_date > @expense.end_date)
       flash[:error] = "Can't time travel"
       redirect_to user_trip_path(@user, @trip)
     elsif @expense.save
@@ -23,8 +23,8 @@ class ExpensesController < ApplicationController
       flash[:notice] = "Expense successfully created!"
       redirect_to user_trip_path(@user, @trip)
     else
-      flash[:error] = expense.errors.full_messages.join(", ")
-      # Might change after implementing Abracadabra
+      flash[:error] = @expense.errors.full_messages.join(", ")
+
       redirect_to user_path(@user)
     end
   end
