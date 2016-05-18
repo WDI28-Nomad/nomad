@@ -1,45 +1,48 @@
+.page-title {
+  text-align: center;
+}
 
- .page-title {
-   text-align: center;
- }
- .glyphicon {
-   font-size: 1.5em;
-   padding-right: 10px;
- }
- .form-control {
-   margin-bottom: 10px;
- }
+.page-subheader {
+  text-align: center;
+}
+.glyphicon {
+  font-size: 1em;
+  padding-right: 10px;
+}
+.form-control {
+  margin-bottom: 10px;
+}
 
- /* Map */
+/* Map */
 
- .map {
-   margin: 150px;
-   text-align: center;
- }
+.map {
+  margin: 150px;
+  text-align: center;
+}
 
- /* My Trips sidebar */
+/* My Trips sidebar */
 
- .my-trips-header {
-   text-align: center;
-   margin-bottom: 20px;
- }
- .my-trips {
-   height: 350px;
- }
- .trips-container {
-   overflow:auto;
-   height: 325px;
- }
- .my-trips-trip {
-   margin-bottom: 10px;
- }
+.my-trips-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.my-trips {
+  height: 350px;
+}
+.trips-container {
+  overflow:auto;
+  height: 325px;
+}
+.my-trips-trip {
+  margin-bottom: 10px;
+}
 
- .my-trips-trip {
-   font-size: 18px;
-   font-weight: 1.2em
- }
+.my-trips-trip {
+  font-size: 18px;
+  font-weight: 1.2em
+}
 
- /* Sidebar */
+/* Sidebar */
 
  .mytrips-container {
    padding: 10px;
@@ -62,31 +65,27 @@
  .profile_pic {
    margin-left: 10px;
  }
- .pagination {
-   width: 100%;
-   font-size: 14px;
-   text-align: center;
- }
 
- /* Expense Table */
- .expense-table-header {
-   font-size: 1.2em;
-   font-weight: bold;
-   margin-bottom: 30px;
- }
- .expense-row {
-   margin: 10px;
-   background-color: #f4f4f4
- }
- td {
-   width: 150px;
-   height: 40px;
- }
 
- .form-field {
-   margin-bottom: 10px;
- }
- select {
-   width: 100%;
-   margin-bottom: 20px;
- }
+/* Expense Table */
+.expense-table-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.expense-row {
+  margin: 10px;
+}
+
+td {
+  width: 150px;
+  height: 40px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+select {
+  width: 100%;
+  margin-bottom: 20px;
+}
