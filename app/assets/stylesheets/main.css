@@ -62,7 +62,8 @@
    margin-top: 10px;
  }
  .profile_pic {
-   margin-left: 10px;
+    margin-top: 20px;
+    text-align: center;
  }
 .sidebar-container {
   background-color: #f4f4f4
@@ -89,4 +90,7 @@ td {
 select {
   width: 100%;
   margin-bottom: 20px;
+}
+.sidebar {
+  text-align: center;
 }
