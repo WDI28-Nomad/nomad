@@ -1,5 +1,6 @@
 require 'httparty'
 class FlightsController < ApplicationController
+  before_action :set_sidebar
 
   include HTTParty
   format :json
@@ -18,6 +19,14 @@ class FlightsController < ApplicationController
       "pointofsalecountry" => "US"
     }
     @flights = HTTParty.get(endpoint, {query: data, headers: headers})
-    render json: @flights
+    # render json: @flights
+  end
+
+  private
+
+  def set_sidebar
+    @trip = Trip.new
+    @trips = current_user.trips.all.order("created_at")
+    @user = current_user
   end
 end

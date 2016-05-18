@@ -1,0 +1,47 @@
+<div class="col-sm-3">
+  <!-- When rendering a partial from another folder, you dont need the underscore in the name of the partial -->
+  <div class="row sidebar">
+  <%= render "/users/sidebar" %>
+  </div>
+  <br>
+  <div class="row">
+  <%= render "/users/my_trips" %>
+  </div>
+</div>
+<div class="col-sm-9">
+  <h1>Flights#index</h1>
+
+  <div class="col-sm-6 col-sm-offset-3">
+    <form id="flight-search">
+      <div class="form-group">
+        <label for="Origin">Origin</label>
+        <input type="text" class="form-control" placeholder="Origin" name="origin">
+      </div>
+      <div class="form-group">
+        <label for="departuredate">Departure Date</label>
+        <input type="date" class="form-control" name="departuredate" placeholder="Departure Date">
+      </div>
+      <div class="form-group">
+        <label for="returndate">Return Date</label>
+        <input type="date" class="form-control" name="returndate">
+      </div>
+      <button type="submit" id="submit-query" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+
+  <div class="col-sm-8 col-sm-offset-2">
+    <% @flights['FareInfo'].each do |flight| %>
+      <li>
+        <p>Destination Location: <%= flight['DestinationLocation'] %> </p>
+        <p>Lowest Nonstop Fare: <%= flight['LowestNonStopFare']['Fare'] %></p>
+        <p>Lowest Nonstop Airline Code: <%= flight['LowestNonStopFare']['AirlineCodes'][0] %></p>
+        <p>Lowest Fare: <%= flight['LowestFare']['Fare'] %> </p>
+        <p>Lowest Fare Airline Code: <%= flight['LowestFare']['AirlineCodes'][0] %> </p>
+        <p>Price Per Mile: <%= flight['PricePerMile'] %></p>
+        <p>Departure Date: <%= flight['DepartureDateTime'].split('T')[0]%></p>
+        <p>Return Date: <%= flight['ReturnDateTime'].split('T')[0] %></p>
+      </li>
+      <br>
+    <% end %>
+  </div>
+</div>
