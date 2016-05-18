@@ -45,7 +45,10 @@ $(function () {
             text: ''
         },
         xAxis: {
-            categories: ['Budget Breakdown']
+            categories: ['Budget Breakdown'],
+            labels: {
+                enabled: false
+            }
         },
         yAxis: {
             min: 0,
