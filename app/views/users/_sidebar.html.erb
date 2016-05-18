@@ -1,14 +1,34 @@
-<div class="profile_pic">
-<% if current_user.avatar.present? %>
-<%= link_to image_tag(current_user.avatar_url, :class => "img-circle pull-left"), user_path(current_user), :"data-no-turbolink" => true %>
-<% else %>
-<%= link_to image_tag(('default.png').to_s, :class => "img-circle pull-left"), user_path(current_user), :"data-no-turbolink" => true %>
-<% end %>
-</div>
-<span class="profile-info pull-right">
-  <div> <%= @user.username %> </div>
-  <div> <%= @user.current_city %> </div>
-  <div> <%= @user.created_at.strftime("Date joined: %m/%d/%Y") %> </div>
+  <div class="row sidebar">
+    <div class="profile_pic">
+    <% if current_user.avatar.present? %>
+    <%= link_to image_tag(current_user.avatar_url, :class => "img-circle pull-left"), user_path(current_user), :"data-no-turbolink" => true %>
+    <% else %>
+    <%= link_to image_tag(('default.png').to_s, :class => "img-circle pull-left"), user_path(current_user), :"data-no-turbolink" => true %>
+    <% end %>
+    </div>
+    <span class="profile-info pull-right">
+      <div> <%= @user.username %> </div>
+      <div> <%= @user.current_city %> </div>
+      <div> <%= @user.created_at.strftime("Date joined: %m/%d/%Y") %> </div>
 
-  <%= button_to "Edit", edit_user_path(@user), method: :get %>
-</span>
+      <%= button_to "Edit", edit_user_path(@user), method: :get %>
+    </span>
+  </div>
+  <br>
+  <div class="row">
+    <div class="mytrips-container">
+      <div class="my-trips-header">
+        <%= link_to "", new_user_trip_path(@user, @trip), class: "glyphicon glyphicon-plus pull-right" %>
+        <h3 role="button" data-toggle="collapse" href="#collapseMyTrips" aria-expanded="false">My Trips</h3>
+      </div>
+      <div id="collapseMyTrips" class="trips-container collapse in">
+        <div class="my-trips">
+          <% @trips.each do |t| %>
+            <div class="my-trips-trip">
+              <%= link_to "#{h truncate(t.name, :length => 35)}", user_trip_path(@user, t), :"data-no-turbolink" => true, class: "my-trips-trip"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

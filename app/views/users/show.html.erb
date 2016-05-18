@@ -5,14 +5,9 @@
 <!-- scripts needed for google maps -->
 
 <div class="col-sm-3">
-  <div class="row sidebar">
-  <%= render "sidebar" %>
-  </div>
-  <br>
-  <div class="row">
-  <%= render "my_trips" %>
-  </div>
+  <%= render 'sidebar' %>
 </div>
+
 <div class="col-sm-9">
   <h1 class="page-title"><%= link_to "Plan A New Trip!", new_user_trip_path(@user, @trip), class: "btn btn-lg btn-success" %></h1>
 
