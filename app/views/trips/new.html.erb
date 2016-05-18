@@ -10,5 +10,10 @@
 </div>
 
 <h1 class="page-title">Add a Trip</h1>
+<% if flash[:error] %>
+    <div class="alert alert-danger" role="alert">
+        <%= flash[:error] %>
+    </div>
+    <% end %>
 
 <%= render "form" %>

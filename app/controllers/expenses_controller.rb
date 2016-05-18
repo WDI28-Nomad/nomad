@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
     @trips = @user.trips
     @trip = Trip.find(params[:trip_id])
     @expense = Expense.new(expense_params)
+    #BUG! you need to fill in both date fields. We dont want that
     if @expense.start_date > @expense.end_date
       flash[:error] = "Can't time travel"
       redirect_to user_trip_path(@user, @trip)

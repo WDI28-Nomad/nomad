@@ -5,10 +5,21 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @usi = current_user
+    @current_trip = @usi.trips
     @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
       marker.lat trip.latitude
       marker.lng trip.longitude
-      marker.infowindow trip.name
+      marker.infowindow render_to_string(:partial => "/users/gmaps", :locals => { :name => trip.name,
+         :user_path => "user_trip_path(@user, trip)"
+       })
+      # @hash = Gmaps4rails.build_markers(@trip) do |trip, marker|
+      #   marker.lat trip.latitude
+      #   marker.lng trip.longitude
+      #   marker.infowindow render_to_string(:partial => "/users/gmaps", :locals => { :name => trip.name,
+      #    :user_path => user_path(current_user)
+      #  })
+      # end
     end
   end
 
