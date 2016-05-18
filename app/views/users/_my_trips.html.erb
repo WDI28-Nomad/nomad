@@ -3,7 +3,7 @@
     <%= link_to "", new_user_trip_path(@user, @trip), class: "glyphicon glyphicon-plus pull-right" %>
     <h3 role="button" data-toggle="collapse" href="#collapseMyTrips" aria-expanded="false">My Trips</h3>
   </div>
-  <div id="collapseMyTrips" class="trips-container collapse">
+  <div id="collapseMyTrips" class="trips-container collapse in">
     <div class="my-trips">
       <% @trips.each do |t| %>
         <div class="my-trips-trip">
