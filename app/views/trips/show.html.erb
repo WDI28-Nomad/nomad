@@ -21,12 +21,17 @@
   <br>
 
   <!-- Budget Bar -->
+  
+  <% if !@expenses.empty? %>
+
   <div id="budget-bar" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
   <script src="javascripts/budget_bar.js">
   </script>
+
+  <% end %>
   <!-- Budget Bar -->
   
-  <h4>Budget: <span id="trip-budget">$<%= @trip.budget %></span></h4>
+  <h4>Budget: $<span id="trip-budget"><%= @trip.budget %></span></h4>
   <h4>Origin: <span id="trip-origin"><%= @trip.origin %></h4>
   <h4>Destination: <%= @trip.destination %></h4>
 

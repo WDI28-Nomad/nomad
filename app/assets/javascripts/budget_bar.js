@@ -31,7 +31,7 @@ $(function () {
     var totalBudgetSeries = {
         type: 'bar',
         name: 'Total Budget',
-        data: [0, 1000],
+        data: [0, totalBudget],
         color: '#FF0000',
         marker: {
           symbol: 'square',
