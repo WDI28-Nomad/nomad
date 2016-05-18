@@ -32,12 +32,12 @@
   <div class="col-sm-8 col-sm-offset-2">
     <% @flights['FareInfo'].each do |flight| %>
       <li>
-        <p>Destination Location: <%= flight['DestinationLocation'] %> </p>
-        <p>Lowest Nonstop Fare: <%= flight['LowestNonStopFare']['Fare'] %></p>
+        <p>Destination Location: <%= flight['DestinationLocation'] %> Airport </p>
+        <p>Lowest Nonstop Fare: $<%= flight['LowestNonStopFare']['Fare'] %></p>
         <p>Lowest Nonstop Airline Code: <%= flight['LowestNonStopFare']['AirlineCodes'][0] %></p>
-        <p>Lowest Fare: <%= flight['LowestFare']['Fare'] %> </p>
-        <p>Lowest Fare Airline Code: <%= flight['LowestFare']['AirlineCodes'][0] %> </p>
-        <p>Price Per Mile: <%= flight['PricePerMile'] %></p>
+        <p>Lowest Fare: $<%= flight['LowestFare']['Fare'] %> </p>
+        <p>Lowest Fare Airline Code: $<%= flight['LowestFare']['AirlineCodes'][0] %> </p>
+        <p>Price Per Mile: $<%= flight['PricePerMile'] %></p>
         <p>Departure Date: <%= flight['DepartureDateTime'].split('T')[0]%></p>
         <p>Return Date: <%= flight['ReturnDateTime'].split('T')[0] %></p>
       </li>

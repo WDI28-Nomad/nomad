@@ -29,4 +29,8 @@ class FlightsController < ApplicationController
     @trips = current_user.trips.all.order("created_at")
     @user = current_user
   end
+
+  def flight_params
+    params.require(:flight).permit(:first_name, :last_name, :email, :password, :current_city, :avatar, :username)
+  end
 end
