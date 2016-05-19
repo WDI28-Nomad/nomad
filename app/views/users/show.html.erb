@@ -5,25 +5,19 @@
 <!-- scripts needed for google maps -->
 
 <div class="col-sm-3">
-  <div class="row sidebar">
-  <%= render "sidebar" %>
-  </div>
-  <br>
-  <div class="row">
-  <%= render "my_trips" %>
-  </div>
+  <%= render 'sidebar' %>
 </div>
-<div class="col-sm-9">
-  <h1 class="page-title">My Trips</h1>
 
+<div class="col-sm-9" style="margin-left: -10px">
+  <h1 class="page-title"><%= link_to "Plan A New Trip!", new_user_trip_path(@user, @trip), class: "btn btn-lg btn-success" %></h1>
 
   <!-- google map -->
-    <div style='width: 100%'>
-      <div id="map" style='width: 100%; height: 300px;'></div>
-    </div>
+  <div id="map" style='width: 100%; height: 550px;'></div>
   <!-- google maps javascript -->
-<script type='text/javascript'>
+  <script type='text/javascript'>
   $(document).on("ready page:load", function(){
+    var triphash = <%=raw @hash.to_json %>;
+    console.log(triphash);
       handler = Gmaps.build('Google');
       handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
         markers = handler.addMarkers(<%=raw @hash.to_json %>);
@@ -31,10 +25,9 @@
         handler.getMap().setZoom(2);
       });
   });
-</script>
+  </script>
+
 
 <br>
-
-<%= link_to "Plan A New Trip!", new_user_trip_path(@user, @trip), class: "btn btn-lg btn-success" %>
 
 </div>

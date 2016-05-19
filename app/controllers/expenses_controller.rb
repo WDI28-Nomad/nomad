@@ -1,18 +1,16 @@
 class ExpensesController < ApplicationController
 
+  before_action :set_sidebar
+
   def index
   end
 
   def new
-    @user = current_user
-    @trips = @user.trips
     @expense = Expense.new
     @trip = Trip.find(params[:id])
   end
 
   def create
-    @user = current_user
-    @trips = @user.trips
     @trip = Trip.find(params[:trip_id])
     @expense = Expense.new(expense_params)
     if (@expense.start_date && @expense.end_date) && (@expense.start_date > @expense.end_date)
@@ -33,15 +31,11 @@ class ExpensesController < ApplicationController
   end
 
   def edit
-    @user = current_user
-    @trips = @user.trips
     @expense = Expense.find(params[:id])
     @trip = Trip.find(params[:trip_id])
   end
 
   def update
-    @user = current_user
-    @trips = @user.trips
     @expense = Expense.find(params[:id])
     @trip = Trip.find(params[:trip_id])
     if @expense.update(expense_params)
@@ -72,5 +66,11 @@ class ExpensesController < ApplicationController
   def expense_params
     params.require(:expense).permit(:name, :expense_type, :amount, :start_date,
                                     :end_date, :notes, :trip_id, :user_id)
+  end
+
+  def set_sidebar
+    @user = current_user
+    @trip = Trip.new
+    @trips = @user.trips.all.order("created_at")
   end
 end
