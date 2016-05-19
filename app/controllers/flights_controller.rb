@@ -5,19 +5,22 @@ class FlightsController < ApplicationController
   include HTTParty
   format :json
 
+  def flight_params
+    @flight_params = {
+      "origin" => nil,
+      "departuredate" => nil,
+      "returndate" => nil,
+      "maxfare" => nil,
+      "pointofsalecountry" => nil
+    }
+  end
+
   def search
     token = "T1RLAQIVKQAmKgZrUUXD/lRWVftSRsxkOxC8A+wvh5dQ+goaEpTCrBODAACgsJserITFPWsY0aMTHKOQ7Tq9VSBjapruuagLnsBj822hAFm4cPvXvnzhL9X6f2+ueyh4zi/NpA62F/qSuYbmJ8iKk31IaDaqm5nMgn3QN13ifFMxdw41Itk4apHmkd8CREpZT83ysUpk7Wcx28yP5lksuqKlIJ1aT+kDAAzgcA9fSG2R/uUBAjj+VPFzpBJplbNtxCpu1EewtUTZj0b/2Q**"
     headers = {
       "Authorization" => "Bearer #{token}"
     }
     endpoint = 'https://api.test.sabre.com/v2/shop/flights/fares'
-    data = {
-      "origin" => "JFK",
-      "departuredate" => "2016-05-20",
-      "returndate" => "2016-05-27",
-      "maxfare" => "300",
-      "pointofsalecountry" => "US"
-    }
     @flights = HTTParty.get(endpoint, {query: data, headers: headers})
     # render json: @flights
   end
@@ -30,7 +33,4 @@ class FlightsController < ApplicationController
     @user = current_user
   end
 
-  def flight_params
-    params.require(:flight).permit(:first_name, :last_name, :email, :password, :current_city, :avatar, :username)
-  end
 end
