@@ -3,41 +3,45 @@
 </div>
 
 <div class="col-sm-9">
+<div class="col-sm-8 col-sm-offset-2">
+  <h2 class="page-title">Update Profile Info</h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= form_for(@user) do |f| %>
+          <div class="form-field col-sm-6">
+            <%= f.label :first_name %><br />
+            <%= f.text_field :first_name, autofocus: true, class: 'form-control' %>
+          </div>
+          <div class="form-field col-sm-6">
+            <%= f.label :last_name %><br />
+            <%= f.text_field :last_name, autofocus: true, class: 'form-control' %>
+          </div>
+          <div class="form-field col-sm-12">
+            <%= f.label :username %><br />
+            <%= f.text_field :username, autofocus: true, class: 'form-control' %>
+          </div>
+          <div class="form-field col-sm-12">
+            <%= f.label :current_city %><br />
+            <%= f.text_field :current_city, autofocus: true, class: 'form-control' %>
+          </div>
+          <div class="form-field col-sm-12">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+          </div>
+          <div class="field col-sm-12">
+            <%= f.file_field :avatar %>
+          </div>
+          <br>
+          <hr>
+          <div class="actions form-field col-sm-12">
+          <%= f.submit "Update", class: "btn btn-block update-profile"%>
+          </div>
+        <% end %>
 
-  <%= form_for(@user) do |user| %>
-
-    <div class="field">
-      <%= user.label :first_name %><br />
-      <%= user.text_field :first_name, autofocus: true, class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= user.label :last_name %><br />
-      <%= user.text_field :last_name, autofocus: true, class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= user.label :username %><br />
-      <%= user.text_field :username, autofocus: true, class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= user.label :current_city %><br />
-      <%= user.text_field :current_city, autofocus: true, class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= user.label :email %><br />
-      <%= user.email_field :email, autofocus: true, class: 'form-control' %>
-    </div>
-
-    <div class="field">
-      <%= user.label :email %><br />
-      <%= user.file_field :avatar %>
-    </div>
-
-    <div class="actions">
-      <%= user.submit "Update" %>
-    </div>
-  <% end %>
+      </div>
 </div>
+
+  </div>
+</div>
+
+<%= render 'footer' %>

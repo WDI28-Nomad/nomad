@@ -1,49 +1,59 @@
-<!DOCTYPE html>
-<html>
-<center>
-<body class="full" lang="en">
-<h1 class="welcome_message">N O M A D</h1><br>
-<button id="drop-button" class="btn btn-lg col-sm-10" role="button" data-toggle="collapse" href="#collapsible-about" aria-expanded="false" aria-controls="collapsible-about">
-  How it works <i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
-</button><br>
-<!-- Collapsible About block-->
-<div class="row collapse" id="collapsible-about">
 
-  <div class="col-sm-10 col-sm-offset-1">
-    <div class="col-sm-4 about-block">
-      <div class="col-sm-3 col-sm-offset-5">
-        <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
-      </div>
-      <div class="col-sm-12">
-        <h3>Create an Account</h3>
-        <p> <%= link_to "Sign up now", new_user_registration_path %> and begin to take control of your personal travel possibiltes! </p>
-      </div>
-    </div>
 
-    <div class="col-sm-4 about-block">
-      <div class="col-sm-3 col-sm-offset-5">
-        <i class="fa fa-search fa-2x" aria-hidden="true"></i>
-      </div>
-
-      <div class="col-sm-12">
-        <h3> Budget a Trip</h3>
-        <p> Set your budget & deligate funds for your trip's expenses by simply clicking on "Plan a New Trip"!</p>
+<div class="jumbotron">
+  <div class="container-index">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1 class="welcome_message text-center">N O M A D</h1><br>
       </div>
 
     </div>
-
-    <div class="col-sm-4 about-block" >
-      <div class="col-sm-3 col-sm-offset-5">
-        <i class="fa fa-share fa-2x" aria-hidden="true"></i>
-      </div>
-      <div class="col-sm-12">
-        <h3> Book your Trip</h3>
-        <p> Save your trip plan. Search for your flights and lodging. Rereve and get ready for a fun packed, stress free trip!  </p>
-      </div>
-      <br>
+    <div class="row">
+      <button id="drop-button" class="btn btn-lg center-block" role="button" data-toggle="collapse" href="#collapsible-about" aria-expanded="false" aria-controls="collapsible-about">
+        Budget Anywhere <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+      </button><br>
     </div>
+
+  </div>
+
+  <!-- Collapsible About block-->
+  <div class="col-sm-10 col-sm-offset-1 about-block collapse" id="collapsible-about">
+
+      <div class="col-sm-4">
+        <div class="col-sm-3 col-sm-offset-5">
+          <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-12">
+          <h4>Create an Account</h4>
+          <p> <%= link_to "Sign up now", new_user_registration_path %> and click
+            "Plan A New Trip" to get started. See how far you can go on your budget!
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-4 about-block">
+        <div class="col-sm-3 col-sm-offset-5">
+          <i class="fa fa-money fa-2x" aria-hidden="true"></i>
+        </div>
+
+        <div class="col-sm-12">
+          <h4>Balance Your Budget</h4>
+          <p>Each time you create a trip
+            you can set your budget and balance your expenses.</p>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4 about-block" >
+        <div class="col-sm-3 col-sm-offset-5">
+          <i class="fa fa-suitcase fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-12">
+          <h4>Book Your Trip</h4>
+          <p>Tweak your trip plan, search for flights and lodging,
+            or just relax and get ready for a fun-packed, stress free trip!  </p>
+        </div>
+        <br>
+      </div>
   </div>
 </div>
-</body>
-</center>
-</html>

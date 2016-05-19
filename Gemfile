@@ -36,6 +36,8 @@ gem 'kaminari'
 #httparty
 gem 'httparty'
 
+gem 'font-awesome-rails', '~> 4.1.0.0'
+
 gem 'protected_attributes'
 
 # Use ActiveModel has_secure_password
