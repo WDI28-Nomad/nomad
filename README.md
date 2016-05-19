@@ -29,8 +29,11 @@
 
 ### Contributors
 [Adriana Villagran](https://github.com/adrianavillagran)
+
 [Ameer Brown](https://github.com/Ameer-Brown)
+
 [Matthew Vilhauer](https://github.com/matthewvilhauer)
+
 [Scott Madrid](https://github.com/samadrid92)
 
 ---
