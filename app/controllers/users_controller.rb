@@ -9,9 +9,10 @@ class UsersController < ApplicationController
       flash[:error] = "You do not have access to this account"
     end
     @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
+      user_trip_path = view_context.link_to trip.name, user_trip_path(@user, trip), :"data-no-turbolink" => true
       marker.lat trip.latitude
       marker.lng trip.longitude
-      marker.infowindow trip.name
+      marker.infowindow "<b>#{user_trip_path}</b>"
     end
   end
 

@@ -1,15 +1,14 @@
 <div class="col-sm-3">
-  <!-- When rendering a partial from another folder, you dont need the underscore in the name of the partial -->
-  <div class="row sidebar">
-  <%= render "/users/sidebar" %>
-  </div>
-  <br>
-  <div class="row">
-  <%= render "/users/my_trips" %>
-  </div>
+  <%= render 'users/sidebar' %>
 </div>
 
 <div class="col-sm-9">
-  <h1 class="page-title">Expenses#edit</h1>
-  <%= render 'form' %>
+  <h2 class="page-title">Edit Expense</h2>
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= render 'form' %>
+        </div>
+      </div>
+    </div>
 </div>

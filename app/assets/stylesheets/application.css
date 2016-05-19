@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap.min
- *= require abracadabra
+ *= require welcome
  *= require main
  *= require_tree .
  *= require_self
