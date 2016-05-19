@@ -20,6 +20,7 @@ class FlightsController < ApplicationController
     headers = {
       "Authorization" => "Bearer #{token}"
     }
+    @flight_params = #form params
     endpoint = 'https://api.test.sabre.com/v2/shop/flights/fares'
     @flights = HTTParty.get(endpoint, {query: data, headers: headers})
     # render json: @flights
