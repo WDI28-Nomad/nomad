@@ -2,15 +2,16 @@
 @import url(https://fonts.googleapis.com/css?family=Sintony);
 
 .btn {
-  background: #58b8a7;
+  background: #f4815a;
   color: white;
 }
 
 .alert {
   margin-top: 5px;
 }
+
 .btn:hover {
-  background: #3c9484;
+  background: #ee6e43;
   color: white !important;
 }
 
@@ -142,15 +143,12 @@ form {
  }
 
 .sidebar-container {
-  background-color: #eceae8;
+  background-color: #add6cf;
   border-radius: 5px;
 }
 
 /* Expense Table */
 
-#expense-table {
-
-}
 .expense-table-header {
   font-size: 1.2em;
   font-weight: bold;
@@ -174,10 +172,6 @@ td {
   font-family: 'Sintony', sans-serif;
 }
 
-select {
-  width: 100%;
-  margin-bottom: 40px;
-}
 .sidebar {
   text-align: center;
 }
@@ -190,14 +184,15 @@ select {
 }
 
 .footer {
- background-color: #f4f4f4;
- margin-top: 50px;
+ background-color: #222222;
  padding-left: 15%;
+ margin-top: 20px;
 }
 
 .footer p {
+  color: grey;
   margin-top: 10px;
- text-align: center;
+  text-align: center;
 }
 
 .update-profile {
