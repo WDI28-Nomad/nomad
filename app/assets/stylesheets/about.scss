@@ -1,0 +1,181 @@
+
+body {
+    font-family: 'Muli', sans-serif;
+    color: #666;
+    background-color: #fff;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 0;
+}
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 36px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+h4 {
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+h5 {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+h6 {
+    font-size: 12px;
+    line-height: 18px;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #ea6060;
+    text-decoration: none;
+}
+.right {
+    float: right;
+    clear: right;
+}
+.left {
+    float: left;
+    clear: left;
+}
+.center {
+    text-align: center;
+    vertical-align: middle;
+}
+.space { padding-top: 40px }
+.padding-right { padding-left: 10px }
+.bold { font-weight: 700 }
+.light { font-weight: lighter }
+
+
+#header {
+    background-color: #3c9484;
+    color: #ffffff;
+    padding: 20px;
+}
+.title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#team{
+    color: #424;
+    height: auto;
+    text-align: center;
+}
+
+#team h6 { color: #888888 }
+.team {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.t-social {
+    padding: 15px 7px;
+    width: 100%;
+}
+.t-social .fa {
+    display: inline-block;
+    padding: 6px;
+    color: #ea6060;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid transparent;
+    border-radius: 5px;
+}
+.t-social .fa:hover {
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid #3c9484;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-font-smoothing: antialiased;
+}
+.t-caption { padding: 20px }
+span.t-position {
+    font-size: 12px;
+    color: #3c9484;
+    vertical-align: middle;
+    text-transform: none;
+    font-weight: normal;
+}
+.t-style2 {
+    border: 1px solid #3c9484;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.t-style2:hover {
+    border: 1px solid #3c9484;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-font-smoothing: antialiased;
+}
+.t-style2 img {
+	padding: 30px;
+	margin: 0 auto;
+  height: 200px;
+  width: 200px
+}
+.t-caption2 { padding: 5px 20px }
+.t-social2 {
+    padding: 5px 7px;
+    width: 100%;
+    background-color: #3c9484;
+}
+.t-style2:hover >.t-social2 {
+    background-color: #ea6060;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-font-smoothing: antialiased;
+}
+.t-social2 .fa {
+    display: inline-block;
+    padding: 6px;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid transparent;
+    border-radius: 5px;
+}
+.t-social2 .fa:hover {
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid #ffffff;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-font-smoothing: antialiased;
+}
+
+// .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img{ margin: auto}
+
+
+/* Responsive Media Query */
+@media only screen and (min-width: 1200px) {
+    .container { width: 960px }
+}
+  h2,
+  .h2 { font-size: 20px }

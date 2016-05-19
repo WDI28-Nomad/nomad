@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'welcome#index'
   get 'welcome/index'
-
+  get "/about", to: "welcome#about", as: "about"
   resources :users do
     resources :trips do
       resources :expenses
