@@ -49,4 +49,4 @@
 ![Alt text](public/wireframes/budget_bar_ss.png "wireframe Trip Show")
 
 #### User Stories
-(https://goo.gl/y5ApXP)
+(https://goo.gl/byrxG6)
