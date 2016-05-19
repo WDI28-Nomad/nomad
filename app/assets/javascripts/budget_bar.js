@@ -76,12 +76,53 @@ $(function () {
         }
     };
 
+    var chartBlankConfig = {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['']
+        },
+        yAxis: {
+            min: 0,
+            max: totalBudget,
+            title: {
+                text: ''
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'Enter Expenses To Start Budgeting',
+            data: [0]
+        }],
+        credits: {
+        enabled: false
+        }
+    };
+
     var finalConfig = _.extend({}, chartStaticConfig, chartDataConfig);
+
+    function putBlankChartOnPage (chartConfig){
+      // put highcharts onto the DOM
+      $('#budget-bar-blank').highcharts(chartConfig);  
+    }
 
     function putChartOnPage (chartConfig){
       // put highcharts onto the DOM
       $('#budget-bar').highcharts(chartConfig);  
     }
     putChartOnPage(finalConfig);
+
+    putBlankChartOnPage(chartBlankConfig);
     
   });

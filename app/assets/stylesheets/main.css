@@ -20,11 +20,11 @@
   margin-bottom: 20px;
 }
 .my-trips {
-  height: 350px;
+  height: 400px;
 }
 .trips-container {
   overflow:auto;
-  height: 325px;
+  height: 375px;
 }
 .my-trips-trip {
   margin-bottom: 10px;
@@ -86,4 +86,7 @@ select {
 }
 .sidebar {
   text-align: center;
+}
+.sidebar-container {
+  position: fixed;
 }
