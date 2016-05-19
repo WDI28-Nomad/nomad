@@ -22,8 +22,7 @@ class ExpensesController < ApplicationController
       redirect_to user_trip_path(@user, @trip)
     else
       flash[:error] = @expense.errors.full_messages.join(", ")
-
-      redirect_to user_path(@user)
+       redirect_to user_trip_path(@user, @trip)
     end
   end
 

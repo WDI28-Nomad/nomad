@@ -5,125 +5,123 @@
 <!-- scripts needed for google maps -->
 
 <div class="col-sm-3">
-  <%= render 'users/sidebar' %>
+    <%= render 'users/sidebar' %>
 </div>
 <div class="col-sm-9">
 
-  <h2 class="page-title">
-    <%= @trip.name %>
-  </h2>
+<div class="col-sm-12">
+    <div class="well row">
+      <h2 class="page-title"><%= @trip.name %></h2>
+      <% if @trip.return_date != nil && @trip.departure_date != nil %>
+      <h4 class="text-center page-subheader">
+          Dates: <%= @trip.departure_date.strftime('%m/%d') %>
+          -
+          <%= @trip.return_date.strftime('%m/%d/%Y') %></h4>
+      <% end %>
 
-<div class="well row">
-  <% if !@expenses.empty? %>
-    <div id="budget-bar" class="col-sm-9" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
-  <% else %>
-    <div id="budget-bar-blank" class="col-sm-9" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
-  <% end %>
-  <div class="col-sm-3 ">
+      <% if !@expenses.empty? %>
+        <div id="budget-bar" class="col-sm-9" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+      <% else %>
+          <div id="budget-bar-blank" class="col-sm-9" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+      <% end %>
 
-    <h4>Trip Details</h4>
+        <div class="col-sm-3 ">
+          <div class="trip-details-container">
+              <h4>Trip Details</h4>
 
-    <p>  <strong>Budget: </strong> $<span id="trip-budget"><%= @trip.budget %></span> </p>
-    <p>  <strong>Origin: </strong> <span id="trip-origin"><%= @trip.origin %>  </p>
-    <p>  <strong>Destination: </strong> <%= @trip.destination %> </p>
-    <% if @trip.return_date != nil && @trip.departure_date != nil %>
-      <p>  <strong>Dates: </strong><%= @trip.departure_date %> - <%= @trip.return_date %></p>
-    <% end %>
-    <% if current_user %>
-        <%= link_to "", edit_user_trip_path(@user, @trip),
-            class: "glyphicon glyphicon-pencil text-center" %>
-        <%= link_to "", user_trip_path(@user, @trip),
-            :"data-no-turbolink" => true,
-            method: :delete,
-            data: {confirm: "Are you sure you want to delete this trip?"},
-            class: "glyphicon glyphicon-trash text-center" %>
-        <% end %>
-  </div>
-  <br>
+              <p><span style="color: #657287">Budget:
+                  </span>
+                  $<span id="trip-budget"><%= @trip.budget %></span>
+              </p>
+              <p>
+                  <span style="color: #657287">Origin:
+                  </span>
+                  <span id="trip-origin"><%= @trip.origin %>
+                  </p>
+                  <p>
+                      <span style="color: #657287">Destination:
+                      </span>
+                      <%= @trip.destination %>
+                  </p>
 
-</div>
+                  <% if current_user %>
+                    <%= link_to "", edit_user_trip_path(@user, @trip),
+                        class: "glyphicon glyphicon-pencil text-center" %>
+                    <%= link_to "", user_trip_path(@user, @trip),
+                        :"data-no-turbolink" => true,
+                        method: :delete,
+                        data: {confirm: "Are you sure you want to delete this trip?"},
+                        class: "glyphicon glyphicon-trash text-center" %>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
 
-  <!-- Button trigger modal -->
- <hr>
-  <div class="add-expense-button pull-right" role="button" data-toggle="modal" data-target="#addModal">
-    <span class="btn btn-info add-expense-button"> <span class="glyphicon glyphicon-plus"></span> Add Expense</span>
-  </div>
+        <!-- Button trigger modal -->
 
-<!-- Add Expense Modal -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="addModalLabel">Add Expense</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'expenses/form' %>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="add-expense-button pull-right" role="button" data-toggle="modal" data-target="#addModal">
+            <span class="btn add-expense-button">
+                <span class="glyphicon glyphicon-plus"></span>
+                Add Expense</span>
+        </div>
 
-<!-- Edit Expense Modal -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="editModalLabel">Edit Expense</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'expenses/form' %>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- Add Expense Modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="addModalLabel">Add Expense</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%= render 'expenses/form' %>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-  <h2 class="page-title">Expenses</h2>
 
-  <!-- <div class="collapse" id="collapseExample">
-    <%= render 'expenses/form' %>
-  </div> -->
-
-  <div class="col-sm-12">
-    <table id="expense-table" class="table table-striped">
-      <tr class="expense-header-row">
-        <td class="expense-table-header">Name</td>
-        <td class="expense-table-header">Expense Type</td>
-        <td class="expense-table-header">Amount</td>
-        <td class="expense-table-header">Start Date</td>
-        <td class="expense-table-header">End Date</td>
-        <td class="expense-table-header"></td>
-        <td class="expense-table-header"></td>
-      </tr>
-      <% @expenses.each do |e| %>
-      <tr class="expense-row"
-          data-expense-type="<%= e.expense_type %>"
-          data-expense-amount="<%=e.amount%>"
-          data-expense-name="<%= e.name %>">
-        <td class="expense-table"><%= e.name %></td>
-        <td class="expense-table"><%= e.expense_type %></td>
-        <td class="expense-table"><%= e.amount %></td>
-        <td class="expense-table"><%= e.start_date %></td>
-        <td class="expense-table"><%= e.end_date %></td>
-        <td class="expense-table">
-          <% if e.expense_type == "Airfare" %>
-              <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
-          <% elsif e.expense_type == "Lodging" %>
-            <!-- Add the Origin City to the URL -->
-              <a href="https://www.airbnb.com" target="_blank">Search Hotels</a>
-          <% end %>
-        </td>
-        <td class="expense-table">
-           <%= link_to "", user_trip_expense_path(@user, @trip, e),
+        <h2 class="subtitle">Expenses</h2>
+        <div class="col-sm-12">
+            <table id="expense-table" class="table table-striped">
+                <tr class="expense-header-row">
+                    <td class="expense-table-header">Name</td>
+                    <td class="expense-table-header">Type</td>
+                    <td class="expense-table-header">Amount</td>
+                    <td class="expense-table-header">Start Date</td>
+                    <td class="expense-table-header">End Date</td>
+                    <td class="expense-table-header"></td>
+                    <td class="expense-table-header"></td>
+                </tr>
+                <% @expenses.each do |e| %>
+                <tr class="expense-row" data-expense-type="<%= e.expense_type %>" data-expense-amount="<%=e.amount%>" data-expense-name="<%= e.name %>">
+                    <td class="expense-table"><%= e.name %></td>
+                    <td class="expense-table"><%= e.expense_type %></td>
+                    <td class="expense-table"><%= e.amount %></td>
+                    <td class="expense-table"><%= e.start_date %></td>
+                    <td class="expense-table"><%= e.end_date %></td>
+                    <td class="expense-table">
+                        <% if e.expense_type == "Airfare" %>
+                        <a href="http://www.kayak.com/flights" target="_blank">Find Flights</a>
+                        <% elsif e.expense_type == "Lodging" %>
+                        <!-- Add the Origin City to the URL -->
+                        <a href="http://www.kayak.com/hotels" target="_blank">Search Hotels</a>
+                        <% end %>
+                    </td>
+                    <td class="expense-table">
+                        <%= link_to "", user_trip_expense_path(@user, @trip, e),
            method: :delete,
            data: {confirm: "Are you sure you want to delete #{e.name}?"},
            class: "glyphicon glyphicon-trash pull-right" %>
-           <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %></td>
-      </tr>
-      <% end %>
-    </table>
-    <br>
-  </div>
-</div>
+                        <%= link_to "", edit_user_trip_expense_path(@user, @trip, e), class: "glyphicon glyphicon-pencil pull-right" %></td>
+                </tr>
+                <% end %>
+            </table>
+            <br>
+        </div>
+    </div>
