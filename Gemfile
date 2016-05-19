@@ -36,7 +36,6 @@ gem 'kaminari'
 #httparty
 gem 'httparty'
 #gem for trip show page inline editing
-gem 'abracadabra'
 
 gem 'protected_attributes'
 
