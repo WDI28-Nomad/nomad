@@ -91,7 +91,7 @@ select {
 @media (min-width: 979px) {
   #midCol.affix-top {
       position:fixed;
-      width:325px; 
+      width:280px; 
   }
   #midCol.affix {
       position:static;
