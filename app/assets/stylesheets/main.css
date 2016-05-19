@@ -2,12 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Sintony);
 
 .btn {
-  background: #c5795f;
+  background: #58b8a7;
   color: white;
 }
 
 .btn:hover {
-  background: #dd7350;
+  background: #3c9484;
   color: white !important;
 }
 

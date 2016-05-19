@@ -1,5 +1,5 @@
 <%= form_for [@user, @trip, @expense] do |f| %>
-  <div class="form-group" style="padding: 5px">
+  <div class="form-group col-sm-12" style="padding: 5px">
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: "Name", required:'true', class:"form-control" %>
   </div>
