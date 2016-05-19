@@ -10,14 +10,19 @@
   </div>
   <div class="row">
     <div class="mytrips-container">
-      <div class="my-trips-header">
 
-        <%= link_to new_user_trip_path(@user, @trip) do %>
-              <i class="fa fa-plus pull-right" aria-hidden="true"></i>
-        <% end %>
-        <h4 role="button" data-toggle="collapse" href="#collapseMyTrips" aria-expanded="false">My Trips</h4>
-      </div>
+        <div class="">
+
+        </div>
+        <div class="my-trips-header">
+          <h4 role="button" data-toggle="collapse" href="#collapseMyTrips" aria-expanded="false">My Trips</h4>
+
+        </div>
+
       <div id="collapseMyTrips" class="trips-container collapse in">
+        <%= link_to new_user_trip_path(@user, @trip) do %>
+              <i id="add-trip" class="fa fa-plus fa-lg pull-right" aria-hidden="true"></i>
+        <% end %>
         <div class="my-trips">
           <% @trips.each do |t| %>
             <div class="my-trips-trip">
