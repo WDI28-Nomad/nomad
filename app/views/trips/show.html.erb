@@ -28,7 +28,7 @@
   <p>  <strong>Origin: </strong> <span id="trip-origin"><%= @trip.origin %>  </p>
   <p>  <strong>Destination: </strong> <%= @trip.destination %> </p>
   <% if @trip.return_date != nil && @trip.departure_date != nil %>
-    <p>  <strong>Dates: </strong><%= @trip.departure_date %> - <%= @trip.return_date %></p>
+    <p>  <strong>Dates: </strong><%= @trip.departure_date.strftime('%m/%d') %> - <%= @trip.return_date.strftime('%m/%d/%Y') %></p>
   <% end %>
   <% if current_user %>
       <%= link_to "", edit_user_trip_path(@user, @trip),
