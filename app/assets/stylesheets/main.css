@@ -50,8 +50,9 @@
 .my-trips-trip {
   font-weight: 1.2em;
   font-family: 'Sintony', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
+
 
 a:hover {
   text-decoration: none !important;
@@ -80,10 +81,17 @@ form {
 
  .mytrips-container h4 {
    font-family: 'Muli', sans-serif;
+   font-size: 20px;
  }
 
  .mytrips-container a {
+   font-family: 'Muli', sans-serif;
+   color:#87c0f4;
+   font-size: 16px;
+ }
 
+ .mytrips-container a:hover {
+   color: #ff6d6d;
  }
 
  .add-expense-button {
@@ -103,8 +111,10 @@ form {
     margin-top: 20px;
     text-align: center;
  }
+
 .sidebar-container {
-  background-color: #f4f4f4
+  background-color: #eceae8;
+  border-radius: 5px;
 }
 
 /* Expense Table */
