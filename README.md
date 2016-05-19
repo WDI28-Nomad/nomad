@@ -1,4 +1,4 @@
-== Project Nomad
+# Project Nomad
 
 ##### Nomad is your next travel budgeting app! Making it easy to keep track of your expenses for your next trip!
 
