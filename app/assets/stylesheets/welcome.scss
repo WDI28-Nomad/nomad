@@ -19,46 +19,45 @@
     -o-background-size: cover;
 }
 
-  .welcome_message{
-    // positioning
-    left: 30%;
-    line-height: 100px;
-    margin: auto;
-    position: absolute;
-    top: 35%;
-    width: 40%;
+.welcome-container {
+  margin-top: 200px;
+}
+.welcome_message{
+  // positioning
+  line-height: 100px;
+  margin: auto;
+  top: 35%;
+  width: 40%;
 
-    // font
-    color: rgba(255,255,255,0.8);
-    font-weight: bold;
-    font-size: 4vw;
-    text-align: center;
-    font-family: "Muli", sans-serif;
+  // font
+  color: rgba(255,255,255,0.8);
+  font-weight: bold;
+  font-size: 6vw;
+  text-align: center;
+  font-family: "Muli", sans-serif;
 
-    //border
-    background-color: rgba(0,0,0,0.5);
-    border-radius:7px;
-    border: 1px solid white;
-  }
+  //border
+  background-color: rgba(0,0,0, 0.6);
+  border-radius:7px;
+  border: 1px solid white;
+}
 
 #drop-button {
     // positioning
-    left: 45%;
+
     line-height: 25px;
     margin: auto;
-    position: absolute;
     top: 55%;
-    width: 100px;
+    width: 150px;
 
     // font
     color:white;
     text-align: center;
     font-family: "Muli", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 
     //border
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid white
+    background-color: orange;
  }
 
  #collapsible-about{
@@ -74,7 +73,7 @@
 
     //border
     border-radius:7px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.9);
     border: 1px solid white
   }
 
