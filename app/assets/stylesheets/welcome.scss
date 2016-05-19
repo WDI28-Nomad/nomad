@@ -45,7 +45,7 @@
     font-size: 17px;
 
     //border
-    background-color: #e7714a;
+    background-color: #3c9484;
  }
 
  #collapsible-about{
@@ -62,11 +62,12 @@
 
 
   #collapsible-about i {
-    color: #e7714a;
+    color: #58b8a7;
   }
 
   #collapsible-about h4 {
-    color: #e7714a;
+    color: #58b8a7;
+    text-align: center;
   }
 
   #collapsible-about p {
@@ -80,9 +81,9 @@
     // positioning
     // position: absolute;
     // left: 58%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(55,65,81, 0.8);
     margin-bottom: 20px;
-    border-radius: 4px;
+    border-radius: 10px;
 
     // font
     color:white;
@@ -91,7 +92,7 @@
 }
 
  .panel-body.new {
-   background: rgba(0, 0, 0, 0.7);
+   background: rgba(55,65,81, 0.8);
   //  margin-bottom: 20px;
    border-radius: 4px;
 
