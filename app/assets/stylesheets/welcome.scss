@@ -3,14 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jumbotron {
-  background-image: url('http://bit.ly/1jXLs1w');
+  background-image: url('https://goo.gl/kSSZDi');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
   margin-top: -20px;
   margin-bottom: -20px;
-  text-align: center;
+
 }
 
 .container-index{
@@ -45,7 +45,7 @@
     font-size: 17px;
 
     //border
-    background-color: #d88c72;
+    background-color: #e7714a;
  }
 
  #collapsible-about{
@@ -62,11 +62,11 @@
 
 
   #collapsible-about i {
-    color: #d88c72;
+    color: #e7714a;
   }
 
   #collapsible-about h4 {
-    color: #d88c72;
+    color: #e7714a;
   }
 
   #collapsible-about p {
@@ -74,30 +74,13 @@
   }
 
 
-  #sign-log {
-    // Nomad Guy
-    // background: url('https://goo.gl/4iJF8K') no-repeat center center fixed;
-    // European City
-    // background: url('https://goo.gl/3ECqEJ') no-repeat center center fixed;
-    // Sea Cliff
-    // background: url('https://goo.gl/Bs31NB') no-repeat center center fixed;
-
-    // Plane
-    background: url('https://goo.gl/kSSZDi') no-repeat center center fixed;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    color: white
-  }
 
   .panel-body.log {
 
     // positioning
-    position: absolute;
-    left: 58%;
-    background: rgba(0, 0, 0, 0.5);
+    // position: absolute;
+    // left: 58%;
+    background: rgba(0, 0, 0, 0.7);
     margin-bottom: 20px;
     border-radius: 4px;
 
@@ -105,31 +88,17 @@
     color:white;
     font-family: "Muli", sans-serif;
 
- }
- .panel-body.new {
+}
 
-   // positioning
-   position: absolute;
-   left: 50%;
-   background: rgba(0, 0, 0, 0.5);
-   margin-bottom: 20px;
+ .panel-body.new {
+   background: rgba(0, 0, 0, 0.7);
+  //  margin-bottom: 20px;
    border-radius: 4px;
 
    // font
    color:white;
    font-family: "Muli", sans-serif;
-
 }
-
- #log_sign_submit {
-    // font
-    color:white;
-    font-family: "Muli", sans-serif;
-
-    //border
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid white
- }
 
 // So the password reset test black
 .pass{
