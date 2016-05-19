@@ -4,19 +4,19 @@
       <%= form_for [@user, @trip] do |f| %>
         <div class="form-field col-sm-6">
           <%= f.label :name %>
-          <%= f.text_field :name, placeholder: "Name", class:"form-control" %>
+          <%= f.text_field :name, placeholder: "Name", required: true, class:"form-control" %>
         </div>
         <div class="form-field col-sm-6">
           <%= f.label :budget %>
-          <%= f.number_field :budget, placeholder: "Budget", class:"form-control" %>
+          <%= f.number_field :budget, placeholder: "Budget", required: true, class:"form-control" %>
         </div>
         <div class="form-field col-sm-6">
           <%= f.label :origin %>
-          <%= f.text_field :origin, placeholder: "Origin", class:"form-control" %>
+          <%= f.text_field :origin, placeholder: "Origin", required: true, class:"form-control" %>
         </div>
         <div class="form-field col-sm-6">
           <%= f.label :destination %>
-          <%= f.text_field :destination, placeholder: "Destination (Optional)", class:"form-control" %>
+          <%= f.text_field :destination, placeholder: "Destination", required: true, class:"form-control" %>
         </div>
         <div class="form-field col-sm-6">
           <%= f.label :departure_date %>
