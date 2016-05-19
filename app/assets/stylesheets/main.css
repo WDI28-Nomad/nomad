@@ -85,24 +85,9 @@ select {
   text-align: center;
 }
 .sidebar-container {
-  position: fixed;
+  
 }
 
-@media (min-width: 979px) {
-  .affix-top {
-      position:fixed;
-      width:280px; 
-  }
-  .affix {
-      position:static;
-      width:100%;
-  }
-}
-@media (min-width: 767px) {
-  .affix,.affix-top {
-      position:fixed;
-  }
-}
 .yield-container {
   margin-top: 70px;
 }
