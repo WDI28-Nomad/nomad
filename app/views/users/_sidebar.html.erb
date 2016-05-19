@@ -9,10 +9,16 @@
       </div>
   </div>
   <div class="row">
+    <div class="">
+      <h4>Profile Info</h4>
+      <div class="my-trips-header">
+        <%= link_to "", edit_user_path(@user), class: "glyphicon glyphicon-pencil pull-right" %>
+      </div>
+    </div>
     <div class="mytrips-container">
       <div class="my-trips-header">
         <%= link_to "", new_user_trip_path(@user, @trip), class: "glyphicon glyphicon-plus pull-right" %>
-        <h3 role="button" data-toggle="collapse" href="#collapseMyTrips" aria-expanded="false">My Trips</h3>
+        <h4 role="button" data-toggle="collapse" href="#collapseMyTrips" aria-expanded="false">My Trips</h4>
       </div>
       <div id="collapseMyTrips" class="trips-container collapse in">
         <div class="my-trips">
