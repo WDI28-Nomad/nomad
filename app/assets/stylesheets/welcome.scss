@@ -1,67 +1,142 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// body {
-//     margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-// }
+
 .full {
-    // background: url('http://bit.ly/1YCHxGx') no-repeat center center fixed;
-    background: url('https://goo.gl/3ECqEJ') no-repeat center center fixed;
+    // Nomad Guy
+    // background: url('https://goo.gl/4iJF8K') no-repeat center center fixed;
+    // European City
+    // background: url('https://goo.gl/3ECqEJ') no-repeat center center fixed;
+    // Sea Cliff
+    // background: url('https://goo.gl/Bs31NB') no-repeat center center fixed;
+
+    // Plane
+    background: url('https://goo.gl/kSSZDi') no-repeat center center fixed;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
 
-.welcome_message{
+  .welcome_message{
     // positioning
     left: 30%;
     line-height: 100px;
     margin: auto;
-    margin-top: -100px;
     position: absolute;
-    top: 50%;
+    top: 35%;
     width: 40%;
+
     // font
-    // color: rgba(164, 33, 38, 0.8);
     color: rgba(255,255,255,0.8);
     font-weight: bold;
-    font-size: 75px;
+    font-size: 4vw;
+    text-align: center;
     font-family: "Muli", sans-serif;
+
     //border
+    background-color: rgba(0,0,0,0.5);
     border-radius:7px;
     border: 1px solid white;
-}
+  }
 
 #drop-button {
     // positioning
     left: 45%;
     line-height: 25px;
     margin: auto;
-    margin-top: -100px;
     position: absolute;
-    top: 70%;
-    width: 10%;
+    top: 55%;
+    width: 100px;
+
     // font
     color:white;
+    text-align: center;
     font-family: "Muli", sans-serif;
-    //border
-    background-color: rgba(255,255,255,0.3);
-    border: 1px solid white
-}
+    font-size: 12px;
 
-#collapsible-about{
+    //border
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid white
+ }
+
+ #collapsible-about{
     // positioning
     left: 12%;
-    margin-top: -100px;
     position: absolute;
-    top: 80%;
+    top: 70%;
     width: 80%;
+
     // font
     color:white;
     font-family: "Muli", sans-serif;
+
     //border
     border-radius:7px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(0,0,0,0.5);
     border: 1px solid white
+  }
+
+
+  #sign-log {
+    // Nomad Guy
+    // background: url('https://goo.gl/4iJF8K') no-repeat center center fixed;
+    // European City
+    // background: url('https://goo.gl/3ECqEJ') no-repeat center center fixed;
+    // Sea Cliff
+    // background: url('https://goo.gl/Bs31NB') no-repeat center center fixed;
+
+    // Plane
+    background: url('https://goo.gl/kSSZDi') no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    color: white
+  }
+
+  .panel-body.log {
+
+    // positioning
+    position: absolute;
+    left: 58%;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    border-radius: 4px;
+
+    // font
+    color:white;
+    font-family: "Muli", sans-serif;
+
+ }
+ .panel-body.new {
+
+   // positioning
+   position: absolute;
+   left: 50%;
+   background: rgba(0, 0, 0, 0.5);
+   margin-bottom: 20px;
+   border-radius: 4px;
+
+   // font
+   color:white;
+   font-family: "Muli", sans-serif;
+
 }
+
+ #log_sign_submit {
+    // font
+    color:white;
+    font-family: "Muli", sans-serif;
+
+    //border
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid white
+ }
+
+// So the password reset test black
+.pass{
+    color: black
+ }
