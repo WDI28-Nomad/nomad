@@ -35,8 +35,6 @@ gem 'gmaps4rails'
 gem 'kaminari'
 #httparty
 gem 'httparty'
-#gem for trip show page inline editing
-gem 'abracadabra'
 
 gem 'protected_attributes'
 
@@ -52,6 +50,8 @@ gem 'protected_attributes'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'foreman'
 end
 
 group :development do

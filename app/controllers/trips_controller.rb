@@ -8,11 +8,6 @@ class TripsController < ApplicationController
     @user = current_user
     @expense = Expense.new
     @expenses = @trip.expenses.all.order("created_at")
-    @hash = Gmaps4rails.build_markers(@trip) do |trip, marker|
-      marker.lat trip.latitude
-      marker.lng trip.longitude
-      marker.infowindow trip.destination
-    end
   end
 
   def new
