@@ -1,8 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Muli);
 @import url(https://fonts.googleapis.com/css?family=Sintony);
-/*font-family: 'Muli', sans-serif;*/
-/*font-family: 'Sintony', sans-serif;*/
 
+.btn {
+  background: #ec9679;
+  color: white;
+}
+
+.btn:hover {
+  background: #dd7350;
+  color: white !important;
+}
 
 .navbar {
   font-family: 'Muli', sans-serif;
@@ -19,7 +26,7 @@
   font-size: 25px;
 }
 .page-subheader {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Sin', sans-serif;
   text-align: center;
 }
 .glyphicon {
@@ -35,9 +42,16 @@
 .my-trips-header {
   text-align: center;
   margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
 }
 .my-trips {
   height: 400px;
+}
+
+#add-trip {
+  margin-top: 5px;
 }
 .trips-container {
   overflow:auto;
@@ -72,6 +86,18 @@ form {
   padding: 10px;
 }
 
+.trip-details-container p {
+  font-family: 'Sintony', sans-serif;
+}
+
+.trip-details-container a {
+  color: grey;
+}
+
+.trip-details-container a:hover {
+  color: #f4815a;
+}
+
 /* Sidebar */
 
  .mytrips-container {
@@ -86,12 +112,12 @@ form {
 
  .mytrips-container a {
    font-family: 'Muli', sans-serif;
-   color:#87c0f4;
+   color:grey;
    font-size: 16px;
  }
 
  .mytrips-container a:hover {
-   color: #ff6d6d;
+   color: #f4815a;
  }
 
  .add-expense-button {
@@ -118,6 +144,10 @@ form {
 }
 
 /* Expense Table */
+
+#expense-table {
+
+}
 .expense-table-header {
   font-size: 1.2em;
   font-weight: bold;
@@ -126,9 +156,19 @@ form {
 .expense-row {
   margin: 10px;
 }
+
+.expense-row a {
+  color:grey;
+}
+
+.expense-row a:hover {
+  color: #f4815a;
+}
+
 td {
   width: 150px;
   height: 40px;
+  font-family: 'Sintony', sans-serif;
 }
 
 select {
@@ -155,4 +195,8 @@ select {
 .footer p {
   margin-top: 10px;
  text-align: center;
+}
+
+.update-profile {
+  margin-top: 10px;
 }
