@@ -1,28 +1,39 @@
-== README
+== Project Nomad
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Nomad is your next travel budgeting app! Making it easy to keep track of your expenses for your next trip!
 
-Things you may want to cover:
+[Find it on Heroku](https://travel-nomad.herokuapp.com/)
 
-* Ruby version
+---
 
-* System dependencies
+### Technologies Used
+* Ruby on Rails
+* PostgreSQL
+* Active Record
+* HTML/CSS
+* Rspec
+* JQuery
+* Highcharts
+* Google Maps API
+* Carrierwave
+* HTTParty
 
-* Configuration
+---
 
-* Database creation
+###Future Development
+* Integrate the Sabre flight API so the user will be able to search flights within the app
+* Integrate a hotel API so the user can search listings within the app
+* Have a user put in a budget and have the app tell the user where he/she can go within thier budget
 
-* Database initialization
+---
 
-* How to run the test suite
+### Contributors
+[Adriana Villagran](https://github.com/adrianavillagran)
+[Ameer Brown](https://github.com/Ameer-Brown)
+[Matthew Vilhauer](https://github.com/matthewvilhauer)
+[Scott Madrid](https://github.com/samadrid92)
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Wireframes
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+#### User Stories
+(https://goo.gl/y5ApXP)
