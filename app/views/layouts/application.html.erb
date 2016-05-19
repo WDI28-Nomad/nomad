@@ -40,15 +40,16 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="col-sm-12">
-  <div class="col-sm-6 col-sm-offset-3">
-    <% flash.each do |name, msg| %>
-      <p> <%= msg %></p>
-    <% end %>
-  </div>
-</div>
 
 <div class="yield-container">
+  <div class="col-sm-12">
+    <% flash.each do |name, msg| %>
+      <div class="alert <% if name=="error" %> alert-danger <% else %> alert-success <% end %> fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
   <%= yield %>
 </div>
 
