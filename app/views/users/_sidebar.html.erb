@@ -11,7 +11,10 @@
   <div class="row">
     <div class="mytrips-container">
       <div class="my-trips-header">
-        <%= link_to "", new_user_trip_path(@user, @trip), class: "glyphicon glyphicon-plus pull-right" %>
+
+        <%= link_to new_user_trip_path(@user, @trip) do %>
+              <i class="fa fa-plus pull-right" aria-hidden="true"></i>
+        <% end %>
         <h4 role="button" data-toggle="collapse" href="#collapseMyTrips" aria-expanded="false">My Trips</h4>
       </div>
       <div id="collapseMyTrips" class="trips-container collapse in">
