@@ -89,11 +89,11 @@ select {
 }
 
 @media (min-width: 979px) {
-  #midCol.affix-top {
+  .affix-top {
       position:fixed;
-      width:325px; 
+      width:280px; 
   }
-  #midCol.affix {
+  .affix {
       position:static;
       width:100%;
   }
