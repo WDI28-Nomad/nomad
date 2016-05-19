@@ -7,12 +7,13 @@ class UsersController < ApplicationController
     if @user != current_user
       redirect_to root_path
       flash[:error] = "You do not have access to this account"
-    end
-    @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
-      user_trip_path = view_context.link_to trip.name, user_trip_path(@user, trip), :"data-no-turbolink" => true
-      marker.lat trip.latitude
-      marker.lng trip.longitude
-      marker.infowindow "<b>#{user_trip_path}</b>"
+    elsif @user
+      @hash = Gmaps4rails.build_markers(@trips) do |trip, marker|
+        user_trip_path = view_context.link_to trip.name, user_trip_path(@user, trip), :"data-no-turbolink" => true
+        marker.lat trip.latitude
+        marker.lng trip.longitude
+        marker.infowindow "<b>#{user_trip_path}</b>"
+      end
     end
   end
 

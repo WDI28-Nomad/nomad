@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'welcome#index'
   get 'welcome/index'
-
+  get "/about", to: "welcome#about", as: "about"
   resources :users do
     resources :trips do
       resources :expenses
     end
   end
+
+  match "*path", to: 'welcome#index', via: :all
 
 #   new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
 #       user_session POST   /users/sign_in(.:format)                                   devise/sessions#create

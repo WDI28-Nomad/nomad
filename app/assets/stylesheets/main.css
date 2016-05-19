@@ -59,13 +59,11 @@
 }
 .trips-container {
   overflow:auto;
-  height: 375px;
-}
-.my-trips-trip {
-  margin-bottom: 10px;
+  height: 400px;
 }
 
 .my-trips-trip {
+  margin-bottom: 10px;
   font-weight: 1.2em;
   font-family: 'Sintony', sans-serif;
   font-size: 16px;

@@ -30,8 +30,12 @@ class ExpensesController < ApplicationController
   end
 
   def edit
-    @expense = Expense.find(params[:id])
-    @trip = Trip.find(params[:trip_id])
+    @expense = Expense.find_by_id(params[:id])
+    if @expense
+      @trip = Trip.find(params[:trip_id])
+    elsif 
+      redirect_to root_path
+    end
   end
 
   def update

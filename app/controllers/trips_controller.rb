@@ -4,10 +4,15 @@ class TripsController < ApplicationController
   before_action :set_sidebar
 
   def show
-    @trip = Trip.find(params[:id])
-    @user = current_user
-    @expense = Expense.new
-    @expenses = @trip.expenses.all.order("created_at")
+    @trip = Trip.find_by_id(params[:id])
+    if @trip
+      @user = current_user
+      @expense = Expense.new
+      @expenses = @trip.expenses.all.order("created_at")
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   def new
