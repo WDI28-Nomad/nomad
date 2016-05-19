@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:500,900,200' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -27,7 +29,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-            <li> <%= link_to "Profile", user_path(current_user), :"data-no-turbolink" => true %></li>
+            <li> <%= link_to "My Trips", user_path(current_user), :"data-no-turbolink" => true %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -46,11 +48,9 @@
   </div>
 </div>
 
+<div class="yield-container">
+  <%= yield %>
+</div>
 
-
-<%= yield %>
-
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script> -->
 </body>
 </html>
