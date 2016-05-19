@@ -102,7 +102,7 @@
                 <tr class="expense-row" data-expense-type="<%= e.expense_type %>" data-expense-amount="<%=e.amount%>" data-expense-name="<%= e.name %>">
                     <td class="expense-table"><%= e.name %></td>
                     <td class="expense-table"><%= e.expense_type %></td>
-                    <td class="expense-table"><%= e.amount %></td>
+                    <td class="expense-table">$<%= e.amount.round %></td>
                     <td class="expense-table"><%= e.start_date %></td>
                     <td class="expense-table"><%= e.end_date %></td>
                     <td class="expense-table">

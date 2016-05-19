@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Sintony);
 
 .btn {
-  background: #58b8a7;
+  background: #f4815a;
   color: white;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .btn:hover {
-  background: #3c9484;
+  background: #ee6e43;
   color: white !important;
 }
 
