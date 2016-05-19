@@ -6,6 +6,9 @@
   color: white;
 }
 
+.alert {
+  margin-top: 5px;
+}
 .btn:hover {
   background: #3c9484;
   color: white !important;

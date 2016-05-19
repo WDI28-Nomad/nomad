@@ -44,9 +44,9 @@
 <div class="yield-container">
   <div class="col-sm-12">
     <% flash.each do |name, msg| %>
-      <div class="alert <% if name=="error" %> alert-danger <% else %> alert-success <% end %> fade in">
+      <div class="alert <% if name=="error" || name=="alert" %> alert-danger <% else %> alert-success <% end %> fade in">
         <button class="close" data-dismiss="alert">×</button>
-        <%= msg %>
+        <%=  msg %>
       </div>
     <% end %>
   </div>
