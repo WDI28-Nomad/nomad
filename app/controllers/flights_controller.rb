@@ -16,7 +16,7 @@ class FlightsController < ApplicationController
   end
 
   def search
-    token = ENV['SABRE_TOKEN']
+    token = ENV["SABRE_KEY"]
     headers = {
       "Authorization" => "Bearer #{token}"
     }
