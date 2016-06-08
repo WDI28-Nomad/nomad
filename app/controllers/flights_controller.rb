@@ -29,7 +29,7 @@ class FlightsController < ApplicationController
     }
     endpoint = 'https://api.test.sabre.com/v2/shop/flights/fares'
     @flights = HTTParty.get(endpoint, {query: data, headers: headers})
-    render json: @flights
+    # render json: @flights
   end
 
   private
