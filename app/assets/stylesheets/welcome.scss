@@ -2,139 +2,104 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.full {
-    // Nomad Guy
-    // background: url('https://goo.gl/4iJF8K') no-repeat center center fixed;
-    // European City
-    // background: url('https://goo.gl/3ECqEJ') no-repeat center center fixed;
-    // Sea Cliff
-    // background: url('https://goo.gl/Bs31NB') no-repeat center center fixed;
+.jumbotron {
+  background-image: url('http://bit.ly/1jXLs1w');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -20px;
+  margin-bottom: -20px;
 
-    // Plane
-    background: url('https://goo.gl/kSSZDi') no-repeat center center fixed;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
-  .welcome_message{
-    // positioning
-    left: 30%;
-    line-height: 100px;
-    margin: auto;
-    position: absolute;
-    top: 35%;
-    width: 40%;
+.container-index{
+  display: block;
+}
 
-    // font
-    color: rgba(255,255,255,0.8);
-    font-weight: bold;
-    font-size: 4vw;
-    text-align: center;
-    font-family: "Muli", sans-serif;
 
-    //border
-    background-color: rgba(0,0,0,0.5);
-    border-radius:7px;
-    border: 1px solid white;
-  }
+.welcome_message{
+  // positioning
+  line-height: 100px;
+  margin-top: 100px;
+
+
+  // font
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: bold;
+  font-size: 6vw;
+  text-align: center;
+  font-family: "Muli", sans-serif !important;;
+
+  //border
+  background-color: rgba(0,0,0, 0.6);
+  border-radius: 10px;
+  border: 1px solid white;
+}
 
 #drop-button {
-    // positioning
-    left: 45%;
-    line-height: 25px;
-    margin: auto;
-    position: absolute;
-    top: 55%;
-    width: 100px;
-
     // font
     color:white;
     text-align: center;
     font-family: "Muli", sans-serif;
-    font-size: 12px;
+    font-size: 17px;
 
     //border
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid white
+    background-color: #3c9484;
  }
 
  #collapsible-about{
-    // positioning
-    left: 12%;
-    position: absolute;
-    top: 70%;
-    width: 80%;
-
     // font
-    color:white;
-    font-family: "Muli", sans-serif;
+    color:rgb(211,211,211);
+    font-family: "Sintony", sans-serif;
 
     //border
     border-radius:7px;
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid white
+    padding: 20px;
+    background-color: rgba(55,65,81,0.9);
+    // border: 1px solid white
   }
 
 
-  #sign-log {
-    // Nomad Guy
-    // background: url('https://goo.gl/4iJF8K') no-repeat center center fixed;
-    // European City
-    // background: url('https://goo.gl/3ECqEJ') no-repeat center center fixed;
-    // Sea Cliff
-    // background: url('https://goo.gl/Bs31NB') no-repeat center center fixed;
-
-    // Plane
-    background: url('https://goo.gl/kSSZDi') no-repeat center center fixed;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    color: white
+  #collapsible-about i {
+    color: #58b8a7;
   }
+
+  #collapsible-about h4 {
+    color: #58b8a7;
+    text-align: center;
+  }
+
+  #collapsible-about p {
+    font-size: 15px;
+  }
+
+
 
   .panel-body.log {
 
     // positioning
-    position: absolute;
-    left: 58%;
-    background: rgba(0, 0, 0, 0.5);
+    // position: absolute;
+    // left: 58%;
+    background: rgba(55,65,81, 0.8);
     margin-bottom: 20px;
-    border-radius: 4px;
+    border-radius: 10px;
 
     // font
     color:white;
     font-family: "Muli", sans-serif;
 
- }
- .panel-body.new {
+}
 
-   // positioning
-   position: absolute;
-   left: 50%;
-   background: rgba(0, 0, 0, 0.5);
-   margin-bottom: 20px;
+ .panel-body.new {
+   background: rgba(55,65,81, 0.8);
+  //  margin-bottom: 20px;
    border-radius: 4px;
 
    // font
    color:white;
    font-family: "Muli", sans-serif;
-
 }
-
- #log_sign_submit {
-    // font
-    color:white;
-    font-family: "Muli", sans-serif;
-
-    //border
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid white
- }
 
 // So the password reset test black
 .pass{

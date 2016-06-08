@@ -1,7 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Muli);
+@import url(https://fonts.googleapis.com/css?family=Sintony);
+
+.btn {
+  background: #f4815a;
+  color: white;
+}
+
+.alert {
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background: #ee6e43;
+  color: white !important;
+}
+
+.navbar {
+  font-family: 'Muli', sans-serif;
+}
+
 .page-title {
   text-align: center;
+  font-family: 'Muli', sans-serif;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  font-size: 25px;
 }
 .page-subheader {
+  font-family: 'Sin', sans-serif;
   text-align: center;
 }
 .glyphicon {
@@ -17,21 +46,58 @@
 .my-trips-header {
   text-align: center;
   margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
 }
 .my-trips {
   height: 400px;
 }
+
+#add-trip {
+  margin-top: 5px;
+}
 .trips-container {
   overflow:auto;
-  height: 375px;
-}
-.my-trips-trip {
-  margin-bottom: 10px;
+  height: 400px;
 }
 
 .my-trips-trip {
-  font-size: 18px;
-  font-weight: 1.2em
+  margin-bottom: 10px;
+  font-weight: 1.2em;
+  font-family: 'Sintony', sans-serif;
+  font-size: 16px;
+}
+
+
+a:hover {
+  text-decoration: none !important;
+}
+
+form {
+  font-family: 'Sintony', sans-serif;
+}
+
+.modal-title {
+  font-family: 'Muli', sans-serif;
+}
+
+.trip-details-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.trip-details-container p {
+  font-family: 'Sintony', sans-serif;
+}
+
+.trip-details-container a {
+  color: grey;
+}
+
+.trip-details-container a:hover {
+  color: #f4815a;
 }
 
 /* Sidebar */
@@ -40,6 +106,22 @@
    padding: 10px;
    margin-left: 10px;
  }
+
+ .mytrips-container h4 {
+   font-family: 'Muli', sans-serif;
+   font-size: 20px;
+ }
+
+ .mytrips-container a {
+   font-family: 'Muli', sans-serif;
+   color:grey;
+   font-size: 16px;
+ }
+
+ .mytrips-container a:hover {
+   color: #f4815a;
+ }
+
  .add-expense-button {
    font-size: 24px;
    font-weight: 1.2em;
@@ -57,11 +139,14 @@
     margin-top: 20px;
     text-align: center;
  }
+
 .sidebar-container {
-  background-color: #f4f4f4
+  background-color: #add6cf;
+  border-radius: 5px;
 }
 
 /* Expense Table */
+
 .expense-table-header {
   font-size: 1.2em;
   font-weight: bold;
@@ -70,24 +155,51 @@
 .expense-row {
   margin: 10px;
 }
+
+.expense-row a {
+  color:grey;
+}
+
+.expense-row a:hover {
+  color: #f4815a;
+}
+
 td {
   width: 150px;
   height: 40px;
+  font-family: 'Sintony', sans-serif;
 }
-.form-field {
-  margin-bottom: 10px;
-}
-select {
-  width: 100%;
-  margin-bottom: 20px;
-}
+
 .sidebar {
   text-align: center;
 }
 .sidebar-container {
-  
+
 }
 
 .yield-container {
   margin-top: 70px;
+}
+
+.footer {
+ background-color: #222222;
+ padding-left: 15%;
+ margin-top: 20px;
+}
+
+.footer p {
+  color: grey;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.update-profile {
+  margin-top: 10px;
+}
+.expense_expense_type {
+     width: 240px;
+   height: 34px;
+   overflow: hidden;
+   background: url(new_arrow.png) no-repeat right #ddd;
+   border: 1px solid #ccc;
 }

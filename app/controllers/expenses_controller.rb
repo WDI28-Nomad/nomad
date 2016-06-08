@@ -22,8 +22,7 @@ class ExpensesController < ApplicationController
       redirect_to user_trip_path(@user, @trip)
     else
       flash[:error] = @expense.errors.full_messages.join(", ")
-
-      redirect_to user_path(@user)
+       redirect_to user_trip_path(@user, @trip)
     end
   end
 
@@ -31,8 +30,12 @@ class ExpensesController < ApplicationController
   end
 
   def edit
-    @expense = Expense.find(params[:id])
-    @trip = Trip.find(params[:trip_id])
+    @expense = Expense.find_by_id(params[:id])
+    if @expense
+      @trip = Trip.find(params[:trip_id])
+    elsif 
+      redirect_to root_path
+    end
   end
 
   def update

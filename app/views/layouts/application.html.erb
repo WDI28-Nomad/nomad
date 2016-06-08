@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -23,6 +23,9 @@
           <span class="icon-bar"></span>
         </button>
         <%= link_to "Nomad", root_path, class: "navbar-brand" %>
+        <ul class="nav navbar-nav">
+            <li>  <%= link_to "About Us", about_path%></li>
+        </ul>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,6 +33,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
             <li> <%= link_to "My Trips", user_path(current_user), :"data-no-turbolink" => true %></li>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -40,15 +44,16 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="col-sm-12">
-  <div class="col-sm-6 col-sm-offset-3">
-    <% flash.each do |name, msg| %>
-      <p> <%= msg %></p>
-    <% end %>
-  </div>
-</div>
 
 <div class="yield-container">
+  <div class="col-sm-12">
+    <% flash.each do |name, msg| %>
+      <div class="alert <% if name=="error" || name=="alert" %> alert-danger <% else %> alert-success <% end %> fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        <%=  msg %>
+      </div>
+    <% end %>
+  </div>
   <%= yield %>
 </div>
 
