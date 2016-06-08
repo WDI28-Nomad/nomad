@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'flights/search', to: "flights#search"
+  post 'flights/search', to: "flights#search"
+  get 'flights', to: "flights#index"
 
   devise_for :users
   root to: 'welcome#index'

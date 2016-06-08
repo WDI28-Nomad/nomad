@@ -1,17 +1,13 @@
 <%= form_for @flight_params do |f| %>
   <div class="form-field col-sm-6">
-    <%= f.text_field :origin, placeholder: "Name", required: true, class:"form-control" %>
-  </div>
-  <div class="form-field col-sm-6">
-    <%= f.number_field :departuredate, placeholder: "Budget", required: true, class:"form-control" %>
-  </div>
-  <div class="form-field col-sm-6">
-    <%= f.label :returndate %>
     <%= f.text_field :origin, placeholder: "Origin", required: true, class:"form-control" %>
   </div>
   <div class="form-field col-sm-6">
-    <%= f.label :maxfare %>
-    <%= f.text_field :destination, placeholder: "Destination", required: true, class:"form-control" %>
+    <%= f.date_field :departuredate, placeholder: "Departure Date", required: true, class:"form-control" %>
+  </div>
+  <div class="form-field col-sm-6">
+    <%= f.label :returndate %>
+    <%= f.date_field :origin, placeholder: "Return Date", required: true, class:"form-control" %>
   </div>
   <div class="form-field trip-post-button">
   <%= f.submit "Submit", class: "btn btn-block btn-success trip-post-button"%>

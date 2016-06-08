@@ -6,6 +6,7 @@ class FlightsController < ApplicationController
   format :json
 
   def flight_params
+    # TODO: don't need this
     @flight_params = {
       "origin" => nil,
       "departuredate" => nil,
@@ -15,20 +16,17 @@ class FlightsController < ApplicationController
     }
   end
 
+  def index
+  end
+
   def search
+    p "flight params are #{params}"
     token = ENV["SABRE_KEY"]
     headers = {
       "Authorization" => "Bearer #{token}"
     }
-    data = {
-      "origin" => "SFO",
-      "departuredate" => "2016-06-08",
-      "returndate" => "2016-06-14",
-      "maxfare" => nil,
-      "pointofsalecountry" => nil
-    }
     endpoint = 'https://api.test.sabre.com/v2/shop/flights/fares'
-    @flights = HTTParty.get(endpoint, {query: data, headers: headers})
+    @flights = HTTParty.get(endpoint, {query: params, headers: headers})
     # render json: @flights
   end
 
