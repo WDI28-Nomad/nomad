@@ -1,35 +1,30 @@
 require 'httparty'
 class FlightsController < ApplicationController
   before_action :set_sidebar
+  skip_before_filter :verify_authenticity_token, :only => :search
 
   include HTTParty
   format :json
 
-  def flight_params
-    @flight_params = {
-      "origin" => nil,
-      "departuredate" => nil,
-      "returndate" => nil,
-      "maxfare" => nil,
-      "pointofsalecountry" => nil
-    }
+  def index
+    
   end
 
   def search
-    token = ENV['SABRE_TOKEN']
+    token = ENV["SABRE_TOKEN"]
     headers = {
       "Authorization" => "Bearer #{token}"
     }
-    data = {
-      "origin" => "SFO",
-      "departuredate" => "2016-06-08",
-      "returndate" => "2016-06-14",
-      "maxfare" => nil,
-      "pointofsalecountry" => nil
+
+    flightSearchData = {
+      "origin" =>  params[:origin],
+      "departuredate" => params[:departuredate],
+      "returndate" => params[:returndate],
     }
+
     endpoint = 'https://api.test.sabre.com/v2/shop/flights/fares'
-    @flights = HTTParty.get(endpoint, {query: data, headers: headers})
-    # render json: @flights
+    @flights = HTTParty.get(endpoint, {query: flightSearchData, headers: headers})
+    render json: @flights
   end
 
   private
