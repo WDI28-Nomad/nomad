@@ -20,6 +20,7 @@
 
 
 $(window).resize(function(){
+
  if( $(window).width()<764 ) {
   $('.trips-container').removeClass('in');
  }
