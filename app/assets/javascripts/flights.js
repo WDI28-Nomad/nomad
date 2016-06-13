@@ -42,18 +42,7 @@ $(document).on('ready page:load', function() {
           longitude = airportResponse.results[0].geometry.location.lng;
           console.log("Airport Latitude:", latitude);
           console.log("Airport Longitude:", longitude);
-          var flightMap = "";
-          function initMap(){
-            flightMap = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: 37.7749, lng: -122.431297},
-              zoom: 2
-            });
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(latitude, longitude),
-              map: flightMap
-            });
-          }
-          initMap();
+          initMap(latitude, longitude);
         },
         error: function(err){
           console.log(err);
@@ -61,4 +50,15 @@ $(document).on('ready page:load', function() {
       });
     }
 
+    var flightMap = "";
+    function initMap(latitude, longitude){
+      flightMap = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 37.7749, lng: -122.431297},
+        zoom: 2
+      });
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(latitude, longitude),
+        map: flightMap
+      });
+    }
 });
