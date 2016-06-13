@@ -17,19 +17,10 @@ $(document).on('ready page:load', function() {
         url:"http://localhost:3000/flights/search",
         data: data,
         success: function (response) {
-          console.log("Flight Search Data:", response.FareInfo);
-          var airports = [];
-          console.log("Empty Airports:", airports);
-
           response.FareInfo.forEach(function parseflight(flight) {
             var newFlightObject = flightCoordinates(flight.DestinationLocation);
-            console.log("New Flight Object: ", newFlightObject);
-            $('.search-results').append('<p>Destination: '+flight.DestinationLocation+' - '+flight.LowestFare.Fare+'</p>');
-            // airports.push(flight.DestinationLocation);
+            // $('.search-results').append('<p>Destination: '+flight.DestinationLocation+' - '+flight.LowestFare.Fare+'</p>');
           });
-
-          console.log("Full Airports:", airports);
-
         },
         error: function(err) {
           console.log(err);
@@ -39,29 +30,35 @@ $(document).on('ready page:load', function() {
     });
 
     function flightCoordinates(airportCode) {
-      console.log("FlightCoordinates getting called.")
       var airport = airportCode
 
       $.ajax({
         type: 'GET',
         url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+airport+'+airport&key=AIzaSyATl1C376VZ4AGorIBLCyTTdc-19GynoJw',
         success: function (airportResponse){
-          console.log("Airport Latitude:", airportResponse.results[0].geometry.location.lat);
-          console.log("Airport Longitude:", airportResponse.results[0].geometry.location.lng);
-
+          var latitude;
+          var longitude;
+          latitude = airportResponse.results[0].geometry.location.lat;
+          longitude = airportResponse.results[0].geometry.location.lng;
+          console.log("Airport Latitude:", latitude);
+          console.log("Airport Longitude:", longitude);
+          var flightMap = "";
+          function initMap(){
+            flightMap = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: 37.7749, lng: -122.431297},
+              zoom: 2
+            });
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(latitude, longitude),
+              map: flightMap
+            });
+          }
+          initMap();
         },
         error: function(err){
           console.log(err);
         }
       });
     }
-    
-    var flightMap;
-    function initMap(){
-      flightMap = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-      });
-    }
-    initMap();
+
 });
